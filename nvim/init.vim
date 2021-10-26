@@ -3,8 +3,13 @@ call plug#begin('~/.vim/plugged')
 Plug 'joshdick/onedark.vim'
 Plug 'psliwka/vim-smoothie'
 Plug 'jiangmiao/auto-pairs'
+
 Plug 'neovim/nvim-lspconfig'
-Plug 'kyazdani42/nvim-web-devicons'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/nvim-cmp'
+
+Plug 'glepnir/lspsaga.nvim'
 
 Plug 'nvim-treesitter/nvim-treesitter', { 'branch': '0.5-compat', 'do': ':TSUpdate' }
 
@@ -12,6 +17,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
 Plug 'nvim-lualine/lualine.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
 
 Plug 'kyazdani42/nvim-tree.lua'
 
@@ -26,26 +32,16 @@ set tabstop=4
 set softtabstop=0
 set shiftwidth=4
 set expandtab
-
 set number
 set relativenumber
-
 set hidden
-
 set nowrap
-
-set completeopt=menuone,noselect
-
+set completeopt=menu,menuone,noselect
 set wildmenu
-
 set confirm
-
 set cursorline
-
 set mouse=a
-
 set scrolloff=15
-
 set noerrorbells
 
 if (empty($TMUX))
@@ -62,6 +58,7 @@ set background=dark
 highlight Normal guibg=none
 set encoding=UTF-8
 
+" TREESITTER
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
     highlight = {
@@ -73,8 +70,10 @@ require'nvim-treesitter.configs'.setup {
 }
 EOF
 
-nnoremap <silent> ;f <cmd>Telescope find_files<cr>
+" TELESCOPE
+nnoremap <silent> ff <cmd>Telescope find_files<cr>
 
+" LUALINE
 lua <<EOF
 require'lualine'.setup {
     options = {
@@ -106,6 +105,7 @@ require'lualine'.setup {
 }
 EOF
 
+" DISPLAY WHITESPACES
 function Whitespace()
   return (vim.fn.search([[\s\+$]], 'nw') ~= 0 and 'TW' or '')
 endfunction
@@ -118,6 +118,7 @@ au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 au InsertLeave * match ExtraWhitespace /\s\+$/
 au BufWinLeave * call clearmatches()
 
+" NVIM_TREE
 let g:nvim_tree_git_hl = 1 "0 by default, will enable file highlight for git attributes (can be used without the icons).
 let g:nvim_tree_highlight_opened_files = 1 "0 by default, will enable folder and file icon highlight for opened files/directories.
 let g:nvim_tree_root_folder_modifier = ':~' "This is the default. See :help filename-modifiers for more options
@@ -247,4 +248,62 @@ require'nvim-tree'.setup {
     }
   }
 }
+EOF
+
+" LSPSAGA
+lua <<EOF
+-- require'lspsaga'.init_lsp_saga{ error_sign = '', warn_sign = '', hint_sign = '', infor_sign = '', border_style = "round",}
+local saga = require 'lspsaga'
+saga.init_lsp_saga()
+EOF
+" lsp provider to find the cursor word definition and reference
+nnoremap <silent> gh <cmd>lua require'lspsaga.provider'.lsp_finder()<CR>
+" or use command LspSagaFinder
+nnoremap <silent> gh :Lspsaga lsp_finder<CR>
+
+" show hover doc
+nnoremap <silent> K <cmd>lua require('lspsaga.hover').render_hover_doc()<CR>
+" or use command
+nnoremap <silent> K :Lspsaga hover_doc<CR>
+
+" scroll down hover doc or scroll in definition preview
+nnoremap <silent> <C-f> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>
+" scroll up hover doc
+nnoremap <silent> <C-b> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>
+
+" NVIM-CMP
+lua <<EOF
+  -- Setup nvim-cmp.
+  local cmp = require'cmp'
+
+  cmp.setup({
+    snippet = {
+      expand = function(args)
+        vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+        -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+        -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
+        -- require'snippy'.expand_snippet(args.body) -- For `snippy` users.
+      end,
+    },
+    mapping = {
+      ['<C-d>'] = cmp.mapping.scroll_docs(-4),
+      ['<C-f>'] = cmp.mapping.scroll_docs(4),
+      ['<C-Space>'] = cmp.mapping.complete(),
+      ['<C-e>'] = cmp.mapping.close(),
+      ['<CR>'] = cmp.mapping.confirm({ select = true }),
+    },
+    sources = cmp.config.sources({
+      { name = 'nvim_lsp' },
+      { name = 'vsnip' }, -- For vsnip users.
+      -- { name = 'luasnip' }, -- For luasnip users.
+      -- { name = 'ultisnips' }, -- For ultisnips users.
+      -- { name = 'snippy' }, -- For snippy users.
+    }, {
+      { name = 'buffer' },
+    })
+  })
+
+  -- Setup lspconfig.
+  local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+  require('lspconfig').clangd.setup {capabilities = capabilities}
 EOF
