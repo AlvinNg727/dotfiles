@@ -3,6 +3,9 @@
 #Update packages
 sudo pacman -Syu
 
+#git
+sudo pacman -S git
+
 #paru
 sudo pacman -S --needed base-devel
 git clone https://aur.archlinux.org/paru.git
@@ -10,7 +13,7 @@ cd paru
 makepkg -si
 
 #stuff i use
-sudo pacman -S fish alacritty git neovim discord libreoffice-still neofetch
+sudo pacman -S fish alacritty neovim discord libreoffice-still neofetch
 paru -S brave-bin
 
 #fonts
