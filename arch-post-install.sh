@@ -20,7 +20,7 @@ wget -O nerd-fonts-2.1.0.tar.gz https://github.com/ryanoasis/nerd-fonts/archive/
 makepkg -sci BUILDDIR=.
 
 #stuff i use
-sudo pacman -S fish alacritty neovim discord libreoffice-still neofetch
+sudo pacman -S fish alacritty neovim discord libreoffice-still neofetch btop
 paru -S brave-bin
 
 #fonts
