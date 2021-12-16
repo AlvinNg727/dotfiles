@@ -1,6 +1,6 @@
 call plug#begin('~/.vim/plugged')
 
-Plug 'joshdick/onedark.vim'
+Plug 'navarasu/onedark.nvim'
 Plug 'psliwka/vim-smoothie'
 Plug 'jiangmiao/auto-pairs'
 
@@ -52,6 +52,10 @@ if (empty($TMUX))
         set termguicolors
     endif
 endif
+
+let g:onedark_style = 'darker'
+let g:onedark_transparent_background = v:true
+
 
 colorscheme onedark
 set background=dark
