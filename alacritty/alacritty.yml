@@ -12,7 +12,7 @@ window:
   opacity: 0.85
   gtk_theme_variant: dark
 
-background_opacity: 0.85
+window.opacity: 0.85
 
 font:
   normal:
