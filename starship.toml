@@ -1,27 +1,105 @@
-add_newline = false
+format = """\
+[╭╴](238)$time$battery$env_var\
+$all[╰─](238)$character"""
 
-[character]
-success_symbol = "[➜](bold green)"
-error_symbol = "[✗](bold red)"
-
-[package]
-disabled = true
+add_newline = true
 
 [battery]
 full_symbol = "🔋"
-charging_symbol = "⚡️"
-discharging_symbol = "💀"
+charging_symbol = "🔌"
+discharging_symbol = "⚡"
 
-[[battery.display]]  # "bold red" style when capacity is between 0% and 10%
+[[battery.display]]
 threshold = 30
 style = "bold red"
 
-[[battery.display]]  # "bold yellow" style when capacity is between 10% and 30%
-threshold = 65
+[[battery.display]]
+threshold = 75
 style = "bold yellow"
 
-[username]
-show_always = true
+[[battery.display]]
+threshold = 100
+style = "bold green"
 
-# [line_break]
-# disabled = true
+[c]
+symbol = " "
+
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
+
+[cmd_duration]
+min_time = 1_000
+show_milliseconds = false
+format = "took [$duration]($style)"
+show_notifications = true
+
+[directory]
+truncation_length = 3
+read_only = " "
+
+[docker_context]
+symbol = " "
+
+[git_branch]
+symbol = " "
+
+[git_metrics]
+disabled = true
+
+[hostname]
+ssh_only = true
+
+[java]
+symbol = " "
+
+[memory_usage]
+threshold = 70
+format = "$symbol[$ram]($style)"
+symbol = " "
+disabled = false
+
+
+[nodejs]
+symbol = " "
+
+[package]
+symbol = " "
+
+[python]
+symbol = " "
+pyenv_version_name = true
+python_binary = "python"
+
+[rust]
+symbol = " "
+
+[status]
+disabled = true
+
+[sudo]
+disabled = false
+allow_windows = false
+
+[time]
+format = '[\[$time\]]($style)'
+disabled = false
+
+[username]
+show_always = false
+
+[custom.files]
+description = "Show files count for current directory"
+command = "find ./ -maxdepth 1 -type f | wc -l"
+format = "📝[$output]($style) "
+style = "white"
+when = "true"
+disabled = true
+
+[custom.directories]
+description = "Show directory count count for current directory"
+command = "find ./ -maxdepth 1 -type d | tail -n +2 | wc -l"
+format = "📁[$output]($style) "
+style = "blue"
+when = "true"
+disabled = true
