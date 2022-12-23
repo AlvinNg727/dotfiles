@@ -5,9 +5,9 @@ $all[╰─](238)$character"""
 add_newline = true
 
 [battery]
-full_symbol = "🔋"
-charging_symbol = "🔌"
-discharging_symbol = "⚡"
+full_symbol = " "
+charging_symbol = " "
+discharging_symbol = " "
 
 [[battery.display]]
 threshold = 30
@@ -59,7 +59,6 @@ format = "$symbol[$ram]($style)"
 symbol = " "
 disabled = false
 
-
 [nodejs]
 symbol = " "
 
@@ -78,7 +77,7 @@ symbol = " "
 disabled = true
 
 [sudo]
-disabled = false
+disabled = true
 allow_windows = false
 
 [time]
