@@ -14,10 +14,7 @@ makepkg -si
 rm -rf paru
 
 #nerd fonts
-paru --getpkgbuild nerd-fonts-complete
-cd nerd-fonts-complete
-wget -O nerd-fonts-2.1.0.tar.gz https://github.com/ryanoasis/nerd-fonts/archive/v2.1.0.tar.gz
-makepkg -sci BUILDDIR=.
+paru -S nerd-fonts-jetbrains-mono nerd-fonts-cascadia-code
 
 #stuff i use
 sudo pacman -S fish alacritty neovim discord libreoffice-still neofetch btop
