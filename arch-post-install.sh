@@ -17,14 +17,14 @@ rm -rf paru
 paru -S nerd-fonts-jetbrains-mono nerd-fonts-cascadia-code
 
 #stuff i use
-sudo pacman -S fish alacritty neovim discord libreoffice-still neofetch btop playerctl
+sudo pacman -S fish alacritty neovim discord libreoffice-still neofetch btop playerctl rust starship
 paru -S brave-bin emote
 
 #fonts
 #sudo pacman -S ttf-cascadia-code
 
 #starship
-sh -c "$(curl -fsSL https://starship.rs/install.sh)"
+#sh -c "$(curl -fsSL https://starship.rs/install.sh)"
 
 #install vim-plug
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \

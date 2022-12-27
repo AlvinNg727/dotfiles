@@ -32,7 +32,7 @@ error_symbol = "[❯](bold red)"
 min_time = 1_000
 show_milliseconds = false
 format = "took [$duration]($style)"
-show_notifications = true
+show_notifications = false
 
 [directory]
 truncation_length = 3
