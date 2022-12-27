@@ -17,11 +17,11 @@ rm -rf paru
 paru -S nerd-fonts-jetbrains-mono nerd-fonts-cascadia-code
 
 #stuff i use
-sudo pacman -S fish alacritty neovim discord libreoffice-still neofetch btop
-paru -S brave-bin
+sudo pacman -S fish alacritty neovim discord libreoffice-still neofetch btop playerctl
+paru -S brave-bin emote
 
 #fonts
-sudo pacman -S ttf-cascadia-code
+#sudo pacman -S ttf-cascadia-code
 
 #starship
 sh -c "$(curl -fsSL https://starship.rs/install.sh)"
