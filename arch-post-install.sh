@@ -21,6 +21,9 @@ sudo pacman -S fish alacritty neovim discord libreoffice-still neofetch btop pla
 rustup default stable
 paru -S brave-bin emote
 
+#swaylock
+#yay -S swaylock-effects-git
+
 #fonts
 #sudo pacman -S ttf-cascadia-code
 
