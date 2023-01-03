@@ -17,12 +17,15 @@ rm -rf paru
 paru -S nerd-fonts-jetbrains-mono nerd-fonts-cascadia-code
 
 #stuff i use
-sudo pacman -S fish alacritty neovim discord libreoffice-still neofetch btop playerctl rustup steam
+sudo pacman -S fish alacritty neovim discord libreoffice-still neofetch btop playerctl rustup steam brightnessctl
 rustup default stable
 paru -S brave-bin emote
 
 #swaylock
 #yay -S swaylock-effects-git
+
+#rofi
+#yay -S --mflags "--nocheck" rofi-lbonn-wayland
 
 #fonts
 #sudo pacman -S ttf-cascadia-code
