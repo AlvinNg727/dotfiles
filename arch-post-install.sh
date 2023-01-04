@@ -17,7 +17,7 @@ rm -rf paru
 paru -S nerd-fonts-jetbrains-mono nerd-fonts-cascadia-code
 
 #stuff i use
-sudo pacman -S fish alacritty neovim discord libreoffice-still neofetch btop playerctl rustup steam brightnessctl
+sudo pacman -S fish alacritty neovim discord libreoffice-still neofetch btop playerctl rustup steam brightnessctl light
 rustup default stable
 paru -S brave-bin emote
 
