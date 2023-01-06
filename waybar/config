@@ -2,11 +2,12 @@
     "layer": "top",
     "position": "top",
     "height": 32,
-    "spacing": 8,
-    "margin": "0 10 0 10", // (top, right, bottom, left)
+    "spacing": 5,
+    "margin": "10 10 0 10", // (top, right, bottom, left)
+    "fixed-center": false,
     "modules-left": ["wlr/workspaces", "custom/media"],
-    "modules-center": ["hyprland/window"],
-    "modules-right" : ["memory", "pulseaudio", "network", "backlight", "battery", "clock", "tray", "custom/power-menu"],
+    //"modules-center": ["hyprland/window"],
+    "modules-right" : ["tray", "memory", "pulseaudio", "backlight", "network", "battery", "clock", "custom/power-menu"],
     "wlr/workspaces": {
         "on-click": "activate",
         "format": "{name}",
@@ -56,7 +57,7 @@
         "format-plugged": " {capacity}%",
         "format-alt": "{time} {icon}",
         "format-full": "{icon} {capacity}%",
-        "format-icons": ["", "", "", "", ""]
+        "format-icons": [" ", " ", " ", " ", " "]
     },
     "network": {
         "interface": "wlan0",
