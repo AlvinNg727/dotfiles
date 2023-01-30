@@ -21,10 +21,15 @@ kmap('i','<F8>', function() require("knap").forward_jump() end)
 kmap('v','<F8>', function() require("knap").forward_jump() end)
 kmap('n','<F8>', function() require("knap").forward_jump() end)
 
+--local gknapsettings = {
+--    texoutputext = "pdf",
+--    textopdf = "pdflatex -synctex=1 -halt-on-error -interaction=batchmode %docroot%",
+--    textopdfviewerlaunch = "zathura %outputfile%",
+--    textopdfviewerrefresh = "kill -HUP %pid%"
+--}
 local gknapsettings = {
-    texoutputext = "pdf",
-    textopdf = "pdflatex -synctex=1 -halt-on-error -interaction=batchmode %docroot%",
-    textopdfviewerlaunch = "zathura %outputfile%",
-    textopdfviewerrefresh = "kill -HUP %pid%"
+    textopdfviewerlaunch = "zathura --synctex-editor-command 'nvim --headless -es --cmd \"lua require('\"'\"'knaphelper'\"'\"').relayjump('\"'\"'%servername%'\"'\"','\"'\"'%{input}'\"'\"',%{line},0)\"' %outputfile%",
+    textopdfviewerrefresh = "none",
+    textopdfforwardjump = "zathura --synctex-forward=%line%:%column%:%srcfile% %outputfile%"
 }
 vim.g.knap_settings = gknapsettings
