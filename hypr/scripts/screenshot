@@ -1,3 +1,14 @@
 #!/bin/bash
 
-grim -g "$(slurp)" - | wl-copy
+copy() {
+    grim -g "$(slurp)" - | wl-copy
+}
+
+save() {
+    grim -g "$(slurp)" $(xdg-user-dir PICTURES)/$(date +'%s_screenshot.png')
+}
+
+case "$1" in
+    copy) copy;;
+    save) save;;
+esac
