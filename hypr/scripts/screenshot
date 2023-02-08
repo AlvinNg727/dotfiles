@@ -2,10 +2,12 @@
 
 copy() {
     grim -g "$(slurp)" - | wl-copy
+    dunstify -a "SCREENSHOT" "Screenshot saved to clipboard" -u normal
 }
 
 save() {
     grim -g "$(slurp)" $(xdg-user-dir PICTURES)/$(date +'%s_screenshot.png')
+    dunstify -a "SCREENSHOT" "Screenshot saved to ~/Pictures" -u normal
 }
 
 case "$1" in
