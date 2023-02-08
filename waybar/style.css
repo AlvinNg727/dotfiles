@@ -3,12 +3,12 @@
     font-size: 15px;
 }
 
-#memory,
 #pulseaudio,
 #backlight,
 #network,
 #battery,
 #clock,
+#custom-dunst,
 #custom-power-menu,
 #custom-window,
 #custom-media,
@@ -106,5 +106,5 @@ window * {
 
 #pluseaudio.muted {
     color: rgb(243, 139, 168);
-    padding-right:16px;
+    padding-right:15px;
 }
