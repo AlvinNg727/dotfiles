@@ -1,162 +1,110 @@
 * {
-  /* `otf-font-awesome` is required to be installed for icons */
-  font-family: JetBrainsMono Nerd Font;
-  font-size: 17px;
-  border-radius: 17px;
+    font-family: JetBrainsMono Nerd Font;
+    font-size: 15px;
 }
 
+#memory,
+#pulseaudio,
+#backlight,
+#network,
+#battery,
 #clock,
 #custom-power-menu,
 #custom-window,
-#memory,
-#network,
 #custom-media,
-#pulseaudio,
-#window,
-#backlight,
-#battery,
 #tray {
-  padding: 0px 15px;
-  border-radius: 12px;
-  background: rgba(30, 30, 46, 0.6);
-  color: rgb(180, 190, 254);
-  box-shadow: rgba(17, 17, 27, 0.2) 0 0 3px 2px;
-  margin-top: 8px;
-  margin-bottom: 8px;
-  margin-right: 2px;
-  margin-left: 2px;
-  transition: all 0.3s ease;
+    background: rgba(0, 0, 0, 0.8);
+    color: rgb(255, 255, 255);
+    border-radius: 12px;
+    padding: 0px 15px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    margin-right: 2px;
+    margin-left: 2px;
 }
 
 #window {
-  background-color: transparent;
-  box-shadow: none;
+    background-color: rgb(0, 0, 0);
+    box-shadow: none;
+    color: rgb(255, 255, 255);
 }
 
 window#waybar {
-  background-color: rgba(0, 0, 0, 0.096);
-  /* background-color: rgb(255, 255, 255); */
-  border-radius: 17px;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
 }
 
 window * {
-  background-color: transparent;
-  border-radius: 17px;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
 }
 
 #workspaces button label {
-  color: rgb(180, 190, 254);
+    color: rgb(255, 255, 255);
 }
 
 #workspaces button.active label {
-  color: rgba(30, 30, 46, 0.6);
-  font-weight: bolder;
+    color: rgb(255, 255, 255);
+    font-weight: bolder;
+    text-decoration-line: underline;
 }
 
 #workspaces button:hover {
-  box-shadow: rgb(180, 190, 254) 0 0 0 1.5px;
-  min-width: 50px;
+    box-shadow: inherit;
+    text-shadow: inherit;
+    background-color:rgb(0, 0, 0);
+    background: rgb(0, 0, 0);
+    border-radius: 12px;
+    border: 2px solid white;
+    min-width: 45px;
 }
 
 #workspaces {
-  background-color: transparent;
-  border-radius: 17px;
-  padding: 5px 0px;
-  margin-top: 3px;
-  margin-bottom: 3px;
+    background-color: transparent;
+    border-radius: 12px;
+    padding: 5px 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 #workspaces button {
-  box-shadow: rgba(17, 17, 27, 0.2) 0 0 3 2px;
-  background-color: rgba(30, 30, 46, 0.6);
-  border-radius: 12px;
-  margin-left: 10px;
-
-  transition: all 0.3s ease;
+    background-color: transparent;
+    border-radius: 12px;
+    margin-left:10px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
 }
 
 #workspaces button.active {
-  min-width: 50px;
-  box-shadow: rgba(0, 0, 0, 0.288) 2 2 5 2px;
-  background-color: rgb(245, 194, 231);
-  background-size: 400% 400%;
-  transition: all 0.3s ease;
-  background: linear-gradient(
-    58deg,
-    #cba6f7,
-    #f38ba8,
-    #eba0ac,
-    #fab387,
-    #f9e2af,
-    #a6e3a1,
-    #94e2d5
-  );
-  background-size: 300% 300%;
-  animation: colored-gradient 10s ease infinite;
-}
-
-@keyframes colored-gradient {
-  0% {
-    background-position: 71% 0%;
-  }
-  50% {
-    background-position: 30% 100%;
-  }
-  100% {
-    background-position: 71% 0%;
-  }
+    box-shadow: rgba(0, 0, 0, 0.288) 2px 2px 5px 2px;
+    background-size: 400% 400%;
+    transition: all 0.3s ease;
+    background-color: transparent;
 }
 
 #custom-power-menu {
-  margin-right: 10px;
-  padding-left: 12px;
-  padding-right: 15px;
-  padding-top: 3px;
+    margin-right: 10px;
+    padding-left: 12px;
+    padding-right: 15px;
 }
 
 #custom-media {
-  margin-left: 2px;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-top: 3px;
-  color: rgba(180, 190, 254, 0.329);
-  background-color: rgba(30, 30, 46, 0.6);
-  box-shadow: rgba(17, 17, 27, 0.2) 0 0 3 2px;
-  transition: all 0.3s ease;
-}
-
-#custom-media.playing {
-  color: rgb(180, 190, 254);
-  background: rgba(30, 30, 46, 0.6);
-  background: linear-gradient(
-    90deg,
-    rgb(49, 50, 68),
-    rgba(30, 30, 46, 0.6),
-    rgba(30, 30, 46, 0.6),
-    rgba(30, 30, 46, 0.6),
-    rgba(30, 30, 46, 0.6),
-    rgb(49, 50, 68)
-  );
-  background-size: 400% 100%;
-  animation: grey-gradient 3s linear infinite;
-  transition: all 0.3s ease;
-}
-
-@keyframes grey-gradient {
-  0% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: -33% 50%;
-  }
+    margin-left: 2px;
+    padding-left: 15px;
+    padding-right: 15px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+    box-shadow: none;
+    transition: all 0.3s ease;
 }
 
 #tray menu {
-  background-color: rgba(30, 30, 46, 0.6);
-  opacity: 0.8;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: rgb(255, 255, 255);
+    opacity: 0.8;
 }
 
-#pulseaudio.muted {
-  color: rgb(243, 139, 168);
-  padding-right: 16px;
+#pluseaudio.muted {
+    color: rgb(243, 139, 168);
+    padding-right:16px;
 }
