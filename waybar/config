@@ -3,10 +3,11 @@
     "position": "top",
     "height": 32,
     "spacing": 5,
-    "margin": "10 10 0 10", // (top, right, bottom, left)
-    "fixed-center": false,
+    //"margin": "10 10 0 10", // (top, right, bottom, left)
+    "margin": "0 0 0 0",
+    "fixed-center": true,
     "modules-left": ["wlr/workspaces", "custom/media"],
-    //"modules-center": ["hyprland/window"],
+    "modules-center": ["hyprland/window"],
     "modules-right" : ["tray", "memory", "pulseaudio", "backlight", "network", "battery", "clock", "custom/power-menu"],
     "wlr/workspaces": {
         "on-click": "activate",
