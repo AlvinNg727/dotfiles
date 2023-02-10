@@ -104,7 +104,7 @@
     },
     "custom/dunst": {
         "exec": "~/.config/waybar/scripts/dunst.sh",
-        "on-click": "dunstctl set-paused toggle",
+        "on-click": "~/.config/hypr/scripts/notification",
         "restart-interval": 1
     }
 }
