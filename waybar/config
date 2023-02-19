@@ -62,6 +62,7 @@
     },
     "network": {
         "interface": "wlan0",
+        "interval": 15,
         "format-wifi": "直 {signalStrength}%",
         "format-ethernet": " {ipaddr}/{cidr}",
         "tooltip-format": "{ifname} via {gwaddr}",
@@ -88,24 +89,30 @@
     },
     "custom/media": {
         "format": "{icon} {}",
-        "return-type": "json",
-        "max-length": 40,
         "format-icons": {
             "spotify": "",
             "default": "🎜"
         },
         "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+        "return-type": "json",
+        "max-length": 40,
+        "on-click": "playerctl play-pause",
+        "on-click-right": "playerctl stop",
+        "smooth-scrolling-threshold": 10, // This value was tested using a trackpad, it should be lowered if using a mouse.
+        "on-scroll-up": "playerctl next",
+        "on-scroll-down": "playerctl previous",
+        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null", // Script in resources/custom_modules folder
     },
     "custom/power-menu": {
         "format": "⏻",
-        "on-click": "~/.config/rofi/powermenu/type-1/powermenu.sh"
+        "on-click": "~/.config/rofi/powermenu/type-1/powermenu.sh",
+        "tooltip": false
     },
     "custom/dunst": {
         "exec": "~/.config/waybar/scripts/dunst.sh",
         "on-click": "~/.config/hypr/scripts/notification",
-        "restart-interval": 1
+        "restart-interval": 1,
+        "tooltip": false
     }
 }
 
