@@ -19,6 +19,7 @@ paru -S nerd-fonts-jetbrains-mono nerd-fonts-cascadia-code
 #stuff i use
 sudo pacman -S fish alacritty neovim discord libreoffice-still neofetch btop playerctl rustup steam brightnessctl light ripgrep bat firefox
 rustup default stable
+yay -S nwg-look-bin
 #paru -S brave-bin emote
 
 #swaylock
