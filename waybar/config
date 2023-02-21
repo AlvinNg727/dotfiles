@@ -65,7 +65,7 @@
         "interval": 15,
         "format-wifi": "直 {signalStrength}%",
         "format-ethernet": " {ipaddr}/{cidr}",
-        "tooltip-format": "{ifname} via {gwaddr}",
+        "tooltip-format": "{essid} at {ifname} via {gwaddr}",
         "format-linked": "{ifname} (No IP)",
         "format-disconnected": "睊",
         //"format-alt": "{ifname}: {ipaddr}/{cidr}",
