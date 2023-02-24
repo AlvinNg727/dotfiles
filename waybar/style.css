@@ -16,7 +16,7 @@
     background: rgba(0, 0, 0, 0.8);
     color: rgb(255, 255, 255);
     border-radius: 12px;
-    padding: 0px 15px;
+    padding: 0px 8px;
     margin-top: 8px;
     margin-bottom: 8px;
     margin-right: 2px;
@@ -84,14 +84,19 @@ window * {
 
 #custom-power-menu {
     margin-right: 10px;
-    padding-left: 12px;
+    padding-left: 10px;
     padding-right: 15px;
+}
+
+#custom-dunst {
+    padding-left: 8px;
+    padding-right: 8px;
 }
 
 #custom-media {
     margin-left: 2px;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 8px;
+    padding-right: 8px;
     color: rgb(255, 255, 255);
     background-color: rgb(0, 0, 0);
     box-shadow: none;
@@ -104,7 +109,32 @@ window * {
     opacity: 0.8;
 }
 
+#network {
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+#clock {
+    padding-left: 8px;
+    padding-right: 2px;
+}
+
+#backlight {
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+#battery {
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
 #pluseaudio.muted {
     color: rgb(243, 139, 168);
     padding-right:15px;
+}
+
+#temperature {
+    padding-left: 8px;
+    padding-right: 8px;
 }
