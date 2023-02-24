@@ -5,8 +5,8 @@ lsp.ensure_installed({
     'bashls',
     'pylsp',
     'rust_analyzer',
-    'sumneko_lua',
-    'texlab'
+    'texlab',
+    'lua_ls'
 })
 
 local cmp = require('cmp')
