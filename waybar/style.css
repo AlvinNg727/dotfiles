@@ -9,7 +9,7 @@
 #battery,
 #clock,
 #custom-dunst,
-#custom-power-menu,
+/*#custom-power-menu,*/
 #custom-window,
 #custom-media,
 #tray {
@@ -116,7 +116,7 @@ window * {
 
 #clock {
     padding-left: 8px;
-    padding-right: 2px;
+    padding-right: 8px;
 }
 
 #backlight {
