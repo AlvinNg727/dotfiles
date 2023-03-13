@@ -1,0 +1,4 @@
+#!/bin/bash
+
+dir="$(dirname $(grep -l coretemp /sys/class/hwmon/hwmon*/name))"
+ln -sf $dir/temp1_input /tmp/temperature

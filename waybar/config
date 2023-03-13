@@ -88,7 +88,7 @@
         "on-click": "pavucontrol"
     },
     "temperature": {
-        "hwmon-path": "/sys/class/hwmon/hwmon6/temp1_input",
+        "hwmon-path": "/tmp/temperature",
         "criical-threshold": 75,
         "interval": 2,
         "format": "{icon} {temperatureC}°C",
