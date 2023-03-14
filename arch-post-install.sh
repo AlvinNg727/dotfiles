@@ -14,20 +14,27 @@ pacman -S fish alacritty neovim discord neofetch btop playerctl rustup steam bri
 rustup default stable
 $1 -S nwg-look-bin ani-cli-git dell-bios-fan-control-git trackma-git brave-bin emote
 
+# hyprland
+#$1 -S hyprland-git
+
+# waybar
+#$1 -S waybar-hyprland-git
+# CPU TEMP NEED MOVE TEMPERATURE.SERVICE FILE TO /USR/LIB/SYSTEMD/SYSTEM/
+
 #dunst
-#yay -S dunst
+#$1 -S dunst
 
 #wallpaper
-#yay -S swww
+#$1 -S swww
 
 #swaylock
-#yay -S swaylock-effects-git
+#$1 -S swaylock-effects-git
 
 #rofi
-#yay -S --mflags "--nocheck" rofi-lbonn-wayland
+#$1 -S --mflags "--nocheck" rofi-lbonn-wayland
 
 #fonts
-#sudo pacman -S ttf-cascadia-code noto-fonts noto-fonts-emoji
+#sudo pacman -S noto-fonts noto-fonts-emoji
 
 #starship
 pacman -S starship
