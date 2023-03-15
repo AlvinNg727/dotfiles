@@ -1,48 +1,48 @@
 ignore-empty-password
-font=JetBrainsMono Nerd Font
+font=Courier Prime
 
 clock
-timestr=%R
+timestr=%T
 
 screenshots
 
-fade-in=0.3
-
 effect-blur=50x2
+effect-vignette=0.5:0.3
 
 indicator
 indicator-radius=200
 indicator-thickness=10
-indicator-caps-lock
 
-key-hl-color=880033ff
+disable-caps-lock-text
+
+key-hl-color=88003300
 
 separator-color=00000000
 
-inside-color=#1F2530
-inside-clear-color=ffd20433
-inside-caps-lock-color=009ddc33
-inside-ver-color=303446
-inside-wrong-color=e78284
+inside-color=1F253000
+inside-clear-color=ffd20400
+inside-caps-lock-color=009ddc00
+inside-ver-color=30344600
+inside-wrong-color=e7828400
 
-ring-color=#1B242B
-ring-clear-color=231f20D9
-ring-caps-lock-color=231f20D9
-ring-ver-color=231f20D9
-ring-wrong-color=231f20D9
+ring-color=1B242B00
+ring-clear-color=231f2000
+ring-caps-lock-color=231f2000
+ring-ver-color=231f2000
+ring-wrong-color=231f2000
 
-line-color=303446
-line-clear-color=303446
-line-caps-lock-color=009ddcFF
-line-ver-color=eebebe
-line-wrong-color=ee2e24FF
+line-color=30344600
+line-clear-color=30344600
+line-caps-lock-color=009ddcF00
+line-ver-color=eebebe00
+line-wrong-color=ee2e2400
 
-text-color=dededeff
-text-clear-color=ffd204ff
-text-ver-color=c6d0f5
-text-wrong-color=ee2e24ff
+text-color=FFFFFFFF
+text-clear-color=FFFFFFFF
+text-ver-color=FFFFFFFF
+text-wrong-color=FFFFFFFF
 
-bs-hl-color=ffd204ff
-caps-lock-key-hl-color=ffd204FF
-caps-lock-bs-hl-color=dededeFF
-text-caps-lock-color=009ddcff
+bs-hl-color=ffd20400
+caps-lock-key-hl-color=ffd20400
+caps-lock-bs-hl-color=dedede00
+text-caps-lock-color=009ddc00
