@@ -2,7 +2,7 @@
 
 hyprctl keyword windowrule "workspace special silent, Alacritty"
 
-hyprctl dispatch "exec alacritty -e btop"
+hyprctl dispatch "exec alacritty"
 
 sleep 5
 
