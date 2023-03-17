@@ -12,7 +12,7 @@ pacman -S ttf-jetbrains-mono-nerd otf-cascadia-code-nerd
 #stuff i use
 pacman -S fish alacritty neovim discord neofetch btop playerctl rustup steam brightnessctl light ripgrep bat firefox
 rustup default stable
-$1 -S nwg-look-bin ani-cli-git dell-bios-fan-control-git trackma-git brave-bin emote
+$1 -S nwg-look-bin ani-cli-git dell-bios-fan-control-git trackma-git brave-bin emote i8kutils
 
 # hyprland
 #$1 -S hyprland-git
