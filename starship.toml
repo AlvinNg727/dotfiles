@@ -5,9 +5,9 @@ $all[╰─](238)$character"""
 add_newline = true
 
 [battery]
-full_symbol = " "
-charging_symbol = " "
-discharging_symbol = " "
+full_symbol = "󰁹 "
+charging_symbol = "󰂄 "
+discharging_symbol = "󰂃 "
 
 [[battery.display]]
 threshold = 30
@@ -36,7 +36,7 @@ show_notifications = false
 
 [directory]
 truncation_length = 3
-read_only = " "
+read_only = " 󰌾"
 
 [docker_context]
 symbol = " "
@@ -56,14 +56,14 @@ symbol = " "
 [memory_usage]
 threshold = 70
 format = "$symbol[$ram]($style)"
-symbol = " "
+symbol = "󰍛 "
 disabled = false
 
 [nodejs]
 symbol = " "
 
 [package]
-symbol = " "
+symbol = "󰏗 "
 
 [python]
 symbol = " "

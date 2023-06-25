@@ -7,7 +7,7 @@ pacman -Syu
 pacman -S git
 
 #nerd fonts
-pacman -S ttf-jetbrains-mono-nerd otf-cascadia-code-nerd
+pacman -S ttf-jetbrains-mono-nerd ttf-cascadia-code-nerd
 
 #stuff i use
 pacman -S fish alacritty neovim discord neofetch btop playerctl rustup steam brightnessctl light ripgrep bat firefox
@@ -42,4 +42,4 @@ pacman -S starship
 
 #theme shit
 sudo pacman -S materia-gtk-theme
-$1 -S papirus-folders-git papirus-icon-theme xcursor-simp1e-dark
+$1 -S papirus-folders-git papirus-icon-theme-git xcursor-simp1e-dark
