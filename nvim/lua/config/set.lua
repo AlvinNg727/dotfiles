@@ -19,3 +19,4 @@ vim.opt.ignorecase = true
 vim.opt.mouse = "a"
 vim.opt.incsearch = true
 vim.opt.updatetime = 50
+vim.o.hlsearch = true
