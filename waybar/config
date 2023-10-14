@@ -2,20 +2,21 @@
     "layer": "top",
     "position": "top",
     "height": 32,
-    "spacing": 5,
     //"margin": "10 10 0 10", // (top, right, bottom, left)
     "margin": "0 0 0 0",
+    "spacing": 5,
     "fixed-center": true,
-    //"modules-left": ["wlr/workspaces", "custom/media"],
     "modules-left": ["hyprland/workspaces", "custom/media"],
     "modules-center": ["hyprland/window"],
     "modules-right" : ["tray", "temperature", "custom/dunst", "pulseaudio", "backlight", "network", "clock", "battery"],
-    "wlr/workspaces": {
-        "on-click": "activate",
+    "hyprland/workspaces": {
+        "active-only": false,
+        "all-outputs": false,
         "format": "{name}",
         "urgent": "",
         "active": "",
-        "default": ""
+        "default": "",
+        "show-special": false
     },
     "hyprland/window": {
         "format": "{}"
