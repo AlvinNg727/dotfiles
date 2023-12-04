@@ -34,7 +34,7 @@ $1 -S nwg-look-bin ani-cli-git dell-bios-fan-control-git trackma-git brave-bin e
 #$1 -S --mflags "--nocheck" rofi-lbonn-wayland
 
 #fonts
-#sudo pacman -S noto-fonts noto-fonts-emoji
+sudo pacman -S noto-fonts noto-fonts-emoji noto-fonts-cjk
 
 #starship
 pacman -S starship
