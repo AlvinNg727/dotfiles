@@ -12,8 +12,7 @@
 #network,
 #backlight,
 #battery,
-#custom-power-menu
-{
+#custom-power-menu {
     background: rgba(0, 0, 0, 0);
     color: rgb(255, 255, 255);
     padding: 2px 8px;
@@ -33,7 +32,6 @@ tooltip {
     margin-top: 0px;
     margin-bottom: 0px;
 }
-
 
 #workspaces button {
     transition: all 0.3s ease;
