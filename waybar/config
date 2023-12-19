@@ -8,12 +8,25 @@
     "margin-left": 0,
     "spacing": 0,
     "passthrough": false,
-    "modules-left": ["custom/text", "clock"],
-    "modules-center": ["hyprland/workspaces"],
-    "modules-right": ["hyprland/submap", "tray", "pulseaudio", "network", "backlight", "battery", "custom/power-menu"],
+    "modules-left": [
+        "custom/text",
+        "clock"
+    ],
+    "modules-center": [
+        "hyprland/workspaces"
+    ],
+    "modules-right": [
+        "hyprland/submap",
+        "tray",
+        "pulseaudio",
+        "network",
+        "backlight",
+        "battery",
+        "custom/power-menu"
+    ],
     "custom/text": {
         "format": "·_·",
-	"tooltip": false
+        "tooltip": false
     },
     "clock": {
         "format": "{:%H:%M | %b %d, %A}",
@@ -51,7 +64,11 @@
         "format": "{icon} {volume}%",
         "format-muted": "󰝟",
         "format-icons": {
-            "default": ["", "", ""]
+            "default": [
+                "",
+                "",
+                ""
+            ]
         },
         "on-click": "pavucontrol"
     },
@@ -74,8 +91,19 @@
     },
     "backlight": {
         "format": "{icon} {percent}%",
-        "format-icons": ["󱩎", "󱩏", "󱩐", "󱩑", "󱩒", "󱩓", "󱩔", "󱩕", "󱩖", "󰛨"],
-	"tooltip": false
+        "format-icons": [
+            "󱩎",
+            "󱩏",
+            "󱩐",
+            "󱩑",
+            "󱩒",
+            "󱩓",
+            "󱩔",
+            "󱩕",
+            "󱩖",
+            "󰛨"
+        ],
+        "tooltip": false
     },
     "battery": {
         "interval": 30,
@@ -85,20 +113,26 @@
             "critical": 20
         },
         "format": "{icon} {capacity}%",
-	"format-warning": "{icon} {capacity}%",
-	"format-critical": "{icon} {capacity}%",
-	"format-time": "{H} h {M} min",
+        "format-warning": "{icon} {capacity}%",
+        "format-critical": "{icon} {capacity}%",
+        "format-time": "{H} h {M} min",
         "format-charging": "{icon} {capacity}%",
         "format-plugged": "{icon} {capacity}%",
         "format-alt": "{time} {icon}",
         "format-icons": {
-	    "charging": "󰃨",
-	    "plugged": "",
-	    "default": ["", "", "", "", ""]
-	}
+            "charging": "󰃨",
+            "plugged": "",
+            "default": [
+                "",
+                "",
+                "",
+                "",
+                ""
+            ]
+        }
     },
     "custom/power-menu": {
         "format": "",
-	"tooltip": false
+        "tooltip": false
     }
 }
