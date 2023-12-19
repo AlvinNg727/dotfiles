@@ -1,5 +1,0 @@
-#!/bin/bash
-
-dir="$(dirname $(grep -l coretemp /sys/class/hwmon/hwmon*/name))"
-
-echo $dir
