@@ -106,7 +106,7 @@
         "tooltip": false
     },
     "battery": {
-        "interval": 30,
+        "interval": 15,
         "states": {
             "good": 95,
             "warning": 35,
@@ -133,6 +133,7 @@
     },
     "custom/power-menu": {
         "format": "",
-        "tooltip": false
+        "tooltip": false,
+        "on-click": "~/.config/rofi/scripts/powermenu.sh"
     }
 }
