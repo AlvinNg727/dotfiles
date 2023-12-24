@@ -1,0 +1,113 @@
+configuration {
+    show-icons: false;
+}
+
+* {
+    font: "CaskaydiaCove Nerd Font 14";
+    background-color: #2F323EFF;
+    foreground: #FFFFFFFF;
+    text-color: #FFFFFFFF;
+    border-color: #FFFFFFFF;
+}
+
+window {
+    transparency: "real";
+    location: center;
+    anchor: center;
+    fullscreen: false;
+    width: 1000px;
+    x-offset: 0px;
+    y-offset: 0px;
+
+    padding: 0px;
+    border: 0px solid;
+    border-radius: 20px;
+    cursor: default;
+}
+
+mainbox {
+    spacing: 0px;
+    background-color: transparent;
+    children: ["inputbar", "listview", "message"];
+}
+
+inputbar {
+    spacing: 0px;
+    padding: 150px 40px;
+    background-color: transparent;
+    background-image: url("~/.config/wallpaper/wallhaven-k7787d.jpg", width);
+    children: ["textbox-prompt-colon", "dummy", "prompt"];
+}
+
+dummy {
+    background-color: transparent;
+}
+
+textbox-prompt-colon {
+    enabled: true;
+    expand: false;
+    str: " System";
+    background-color: transparent;
+}
+
+prompt {
+    background-color: transparent;
+}
+
+listview {
+    columns: 3;
+    lines: 1;
+    dynamic: true;
+    scrollbar: false;
+    cycle: true;
+    fixed-height: true;
+    fixed-columns: true;
+    layout: vertical;
+
+    spacing: 25px;
+    margin: 15px;
+    background-color: transparent;
+    cursor: "default";
+}
+
+element {
+    padding: 20px 5px;
+    border: 0px solid;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+element.normal.normal {
+    background-color: transparent;
+}
+
+element.alternate.normal {
+    background-color: transparent;
+}
+
+element selected.normal {
+    background-color: transparent;
+    border: 2px solid;
+    border-radius: 10px;
+}
+
+element-text {
+    background-color: inherit;
+    text-color: inherit;
+    vertical-align: 0.5;
+    horizontal-align: 0.5;
+}
+
+message {
+    background-color: transparent;
+    margin: 0px;
+    padding: 15px;
+    border-radius: 0px;
+}
+
+textbox {
+    background-color: transparent;
+    vertical-align: 0.5;
+    horizontal-align: 0.5;
+    highlight: none;
+}
