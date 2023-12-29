@@ -4,7 +4,7 @@ configuration {
 
 * {
     font: "CaskaydiaCove Nerd Font 14";
-    background-color: #2F323EFF;
+    background-color: #111111FF;
     foreground: #FFFFFFFF;
     text-color: #FFFFFFFF;
     border-color: #FFFFFFFF;
