@@ -7,6 +7,7 @@ host=$(hostname)
 shutdown=" Shutdown"
 reboot="󰃨 Reboot"
 donotdisturb=" Do Not Disturb"
+lock=" Lock"
 yes=" Yes"
 no=" No"
 
@@ -34,7 +35,7 @@ rofi_cmd() {
 }
 
 run_rofi() {
-	echo -e "$donotdisturb\n$reboot\n$shutdown" | rofi_cmd
+	echo -e "$lock\n$donotdisturb\n$reboot\n$shutdown" | rofi_cmd
 }
 
 run_cmd() {
@@ -59,5 +60,9 @@ case $chosen in
         run_cmd --reboot
         ;;
     $donotdisturb)
+        ~/.config/hypr/scripts/notification
+        ;;
+    $lock)
+        hyprlock
         ;;
 esac
