@@ -6,7 +6,7 @@ configuration {
 	show-icons: true;
 	terminal: "rofi-sensible-terminal";
 	icon-theme: "Papirus-Dark";
-    display-drun: "";
+    display-drun: " ";
     drun-display-format: "{name}";
 }
 

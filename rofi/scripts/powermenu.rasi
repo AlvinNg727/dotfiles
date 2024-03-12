@@ -55,7 +55,7 @@ prompt {
 }
 
 listview {
-    columns: 3;
+    columns: 4;
     lines: 1;
     dynamic: true;
     scrollbar: false;
