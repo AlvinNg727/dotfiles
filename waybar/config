@@ -18,6 +18,7 @@
     "modules-right": [
         "hyprland/submap",
         "tray",
+        "idle_inhibitor",
         "pulseaudio",
         "network",
         "backlight",
@@ -59,6 +60,14 @@
     "tray": {
         "icon-size": 21,
         "spacing": 10
+    },
+    "idle_inhibitor": {
+        "format": "{icon} ",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        },
+        "tooltip": false,
     },
     "pulseaudio": {
         "format": "{icon} {volume}%",
