@@ -5,6 +5,8 @@ wallpaper_directory=~/.config/wallpaper/dark
 wal=$(find ${wallpaper_directory} -name '*' | tail -n +2 | shuf -n 1)
 cache=""
 
+sleep 3
+
 while true; do
     if [[ $cache == $wal ]]; then
         wal=$(find ${wallpaper_directory} -name '*' | tail -n +2 | shuf -n 1)
@@ -15,6 +17,7 @@ while true; do
         for m in ''${monitor[@]}; do
             hyprctl hyprpaper wallpaper "$m,$wal"
         done
+
+        sleep 300
     fi
-    sleep 300
 done
