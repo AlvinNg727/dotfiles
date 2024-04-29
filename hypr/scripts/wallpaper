@@ -5,7 +5,7 @@ wallpaper_directory=~/.config/wallpaper/dark
 wal=$(find ${wallpaper_directory} -name '*' | tail -n +2 | shuf -n 1)
 cache=""
 
-sleep 3
+sleep 2
 
 while true; do
     if [[ $cache == $wal ]]; then
