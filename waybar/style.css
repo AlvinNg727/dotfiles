@@ -1,6 +1,6 @@
 * {
-    font-family: CaskaydiaCove Nerd Font;
-    font-size: 15px;
+    font-family: "CaskaydiaCove Nerd Font";
+    font-size: 12px;
 }
 
 #custom-text,
@@ -16,8 +16,8 @@
 #custom-power-menu {
     background: rgba(0, 0, 0, 0);
     color: rgb(255, 255, 255);
-    padding: 2px 8px;
-    margin: 8px 0px;
+    padding: 0px 4px;
+    margin: 0px 4px;
 }
 
 window#waybar {
@@ -27,11 +27,6 @@ window#waybar {
 tooltip {
     background: rgba(0, 0, 0, 0.8);
     color: rgb(255, 255, 255);
-}
-
-#workspaces {
-    margin-top: 0px;
-    margin-bottom: 0px;
 }
 
 #workspaces button {
@@ -57,4 +52,8 @@ tooltip {
 
 #tray menu {
     background: rgba(0, 0, 0, 0.8);
+}
+
+#custom-power-menu {
+    padding-right: 10px;
 }

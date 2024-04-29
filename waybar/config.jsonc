@@ -1,13 +1,14 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 41,
+    "height": 31,
     "margin-top": 0,
     "margin-right": 0,
     "margin-bottom": 0,
     "margin-left": 0,
     "spacing": 0,
     "passthrough": false,
+    "reload_style_on_change": true,
     "modules-left": [
         "custom/text",
         "clock"
@@ -20,6 +21,7 @@
         "tray",
         "idle_inhibitor",
         "pulseaudio",
+        "pulseaudio#microphone",
         "network",
         "backlight",
         "battery",
@@ -58,45 +60,53 @@
         "format": "Mode: {}"
     },
     "tray": {
-        "icon-size": 21,
-        "spacing": 10
+        "icon-size": 18,
+        "spacing": 5
     },
     "idle_inhibitor": {
-        "format": "{icon} ",
+        "format": "{icon}",
         "format-icons": {
             "activated": "",
             "deactivated": ""
         },
-        "tooltip": false,
+        "tooltip": false
     },
     "pulseaudio": {
         "format": "{icon} {volume}%",
-        "format-muted": "󰝟",
+        "format-muted": "",
         "format-icons": {
             "default": [
                 "",
                 "",
                 ""
-            ]
+            ],
+            "headphone": ""
         },
-        "on-click": "pavucontrol"
+        "on-click": "pavucontrol -t 3"
+    },
+    "pulseaudio#microphone": {
+        "format": "{format_source}",
+        "format-source": "",
+        "format-source-muted": "",
+        "on-click": "pavucontrol -t 4"
     },
     "network": {
         "interface": "wlp0s20f3",
-        "interval": 30,
+        "interval": 2,
         "format": "{ifname}",
         "format-ethernet": "{icon} {ipaddr}",
         "format-wifi": "{icon} {signalStrength}%",
         "format-linked": "{ifname} (No IP)",
         "format-disconnected": "{icon}",
+        "format-alt": "<span foreground='#99ffdd'> {bandwidthDownBytes}</span> <span foreground='#ffcc66'> {bandwidthUpBytes}</span>",
         "format-icons": {
             "ethernet": "󰈀",
             "wifi": "󰖩",
             "disconnected": "󰖪"
         },
-        "on-click": "alacritty -e nmtui",
         "tooltip": true,
-        "tooltip-format": "{essid} at {ifname} via {gwaddr}"
+        "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
+        "tooltip-format-disconnected": "Disconnected"
     },
     "backlight": {
         "format": "{icon} {percent}%",
@@ -115,7 +125,7 @@
         "tooltip": false
     },
     "battery": {
-        "interval": 5,
+        "interval": 30,
         "states": {
             "good": 95,
             "warning": 35,
@@ -132,11 +142,17 @@
             "charging": "󰃨",
             "plugged": "",
             "default": [
-                "",
-                "",
-                "",
-                "",
-                ""
+                "󰂎",
+                "󰁺",
+                "󰁻",
+                "󰁼",
+                "󰁽",
+                "󰁾",
+                "󰁿",
+                "󰂀",
+                "󰂁",
+                "󰂂",
+                "󰁹"
             ]
         }
     },
