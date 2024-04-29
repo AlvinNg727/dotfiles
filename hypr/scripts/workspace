@@ -1,9 +1,3 @@
 #!/bin/sh
 
-#hyprctl keyword windowrule "workspace special silent, Alacritty"
-
 hyprctl dispatch "exec [workspace special silent] alacritty"
-
-#sleep 5
-
-#hyprctl keyword windowrule "workspace unset, Alacritty"
