@@ -1,21 +1,25 @@
 #!/bin/bash
 
 monitor=(`hyprctl monitors |  grep Monitor | awk '{print $2}'`)
-wallpaper_directory=~/.config/wallpaper/dark
-wal=$(find ${wallpaper_directory} -name '*' | tail -n +2 | shuf -n 1)
+wallpaper_directory=~/.config/wallpaper/dark/general
+wal=$(find ${wallpaper_directory} -name '*' -type f | shuf -n 1)
 cache=""
 
 sleep 2
 
 while true; do
     if [[ $cache == $wal ]]; then
-        wal=$(find ${wallpaper_directory} -name '*' | tail -n +2 | shuf -n 1)
+        wal=$(find ${wallpaper_directory} -name '*' -type f | shuf -n 1)
     else
         cache=$wal
         hyprctl hyprpaper unload all
         hyprctl hyprpaper preload $wal
         for m in ''${monitor[@]}; do
-            hyprctl hyprpaper wallpaper "$m,$wal"
+            if [[ $wal == *"ultrawide"* ]]; then
+                hyprctl hyprpaper wallpaper "$m,contain:$wal"
+            else
+                hyprctl hyprpaper wallpaper "$m,$wal"
+            fi
         done
 
         sleep 300
