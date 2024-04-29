@@ -35,7 +35,7 @@ inputbar {
     spacing: 0px;
     padding: 150px 40px;
     background-color: transparent;
-    background-image: url("~/.config/wallpaper/wallhaven-k7787d.jpg", width);
+    background-image: url("~/.config/wallpaper/dark/wallhaven-1kv693.jpg", width);
     children: ["textbox-prompt-colon", "dummy", "prompt"];
 }
 
