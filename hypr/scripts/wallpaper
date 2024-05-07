@@ -12,6 +12,7 @@ while true; do
         wal=$(find ${wallpaper_directory} -name '*' -type f | shuf -n 1)
     else
         cache=$wal
+        monitor=(`hyprctl monitors |  grep Monitor | awk '{print $2}'`)
         hyprctl hyprpaper unload all
         hyprctl hyprpaper preload $wal
         for m in ''${monitor[@]}; do
