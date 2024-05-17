@@ -22,7 +22,7 @@ $1 -S nwg-look-bin ani-cli-git dell-bios-fan-control-git trackma-git brave-bin e
 # CPU TEMP NEED MOVE TEMPERATURE.SERVICE FILE TO /USR/LIB/SYSTEMD/SYSTEM/
 
 #dunst
-#$1 -S dunst
+#$1 -S dunst libnotify
 
 #wallpaper
 #$1 -S swww
