@@ -7,39 +7,34 @@ pacman -Syu
 pacman -S git
 
 #nerd fonts
-pacman -S ttf-jetbrains-mono-nerd ttf-cascadia-code-nerd
+pacman -S ttf-cascadia-code-nerd
 
 #stuff i use
-pacman -S fish alacritty neovim discord neofetch btop playerctl rustup steam brightnessctl light ripgrep bat firefox wl-clipboard xdg-user-dirs thunar
+pacman -S fish alacritty neovim discord neofetch btop playerctl rustup steam brightnessctl light bat firefox wl-clipboard xdg-user-dirs thunar file-roller thunar-archive-plugin tumbler
 rustup default stable
-$1 -S nwg-look-bin ani-cli-git dell-bios-fan-control-git trackma-git brave-bin emote i8kutils
+$1 -S ani-cli-git trackma-git brave-bin emote
 
 # hyprland
-#$1 -S hyprland-git
+# $1 -S hyprland-git xdg-desktop-portal-hyprland-git xdg-desktop-portal-gtk hyprlock-git hyprlang-git hyprwayland-scanner-git hyprcursor-git hyprpaper-git hypridle-git
+
+# nwg-look
+# $1 -S nwg-look
 
 # waybar
-#$1 -S waybar-hyprland-git
-# CPU TEMP NEED MOVE TEMPERATURE.SERVICE FILE TO /USR/LIB/SYSTEMD/SYSTEM/
+# $1 -S waybar
 
 #dunst
-#$1 -S dunst libnotify
-
-#wallpaper
-#$1 -S swww
-
-#swaylock
-#$1 -S swaylock-effects-git
+# $1 -S dunst libnotify
 
 #rofi
-#$1 -S --mflags "--nocheck" rofi-lbonn-wayland
+# $1 -S rofi-wayland
 
 #fonts
-sudo pacman -S noto-fonts noto-fonts-emoji noto-fonts-cjk
+pacman -S noto-fonts noto-fonts-emoji noto-fonts-cjk
 
 #starship
 pacman -S starship
-#sh -c "$(curl -fsSL https://starship.rs/install.sh)"
 
 #theme shit
 sudo pacman -S materia-gtk-theme
-$1 -S papirus-folders-git papirus-icon-theme-git xcursor-simp1e-dark
+$1 -S papirus-icon-theme-git xcursor-simp1e-dark
