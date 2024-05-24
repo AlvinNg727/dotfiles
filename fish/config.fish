@@ -8,4 +8,6 @@ end
 
 pyenv init - | source
 
+fzf --fish | source
+
 starship init fish | source
