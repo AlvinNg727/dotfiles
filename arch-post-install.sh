@@ -10,7 +10,7 @@ pacman -S git
 pacman -S ttf-cascadia-code-nerd
 
 #stuff i use
-pacman -S fish alacritty neovim discord neofetch btop playerctl rustup steam brightnessctl light bat firefox wl-clipboard xdg-user-dirs thunar file-roller thunar-archive-plugin tumbler eza
+pacman -S fish alacritty neovim discord neofetch btop playerctl rustup steam brightnessctl light bat firefox wl-clipboard xdg-user-dirs thunar file-roller thunar-archive-plugin tumbler eza bc
 rustup default stable
 $1 -S ani-cli-git trackma-git brave-bin emote
 
