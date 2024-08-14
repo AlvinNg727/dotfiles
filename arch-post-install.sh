@@ -3,8 +3,8 @@
 #Update packages
 pacman -Syu
 
-#git
-pacman -S git
+# git
+pacman -S git github-cli
 
 #nerd fonts
 pacman -S ttf-cascadia-code-nerd
