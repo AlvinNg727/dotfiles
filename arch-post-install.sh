@@ -30,7 +30,7 @@ $1 -S gnome-keyring libsecret seahorse
 # $1 -S dunst libnotify
 
 # rofi
-# $1 -S rofi-wayland
+# pacman -S rofi-wayland
 
 # fonts
 pacman -S noto-fonts noto-fonts-emoji noto-fonts-cjk
