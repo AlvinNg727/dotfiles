@@ -40,4 +40,4 @@ pacman -S starship
 
 # theme shit
 sudo pacman -S materia-gtk-theme
-$1 -S papirus-icon-theme-git xcursor-simp1e-dark
+$1 -S papirus-icon-theme-git
