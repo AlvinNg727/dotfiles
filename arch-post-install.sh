@@ -14,6 +14,8 @@ pacman -S fish alacritty neovim discord neofetch btop playerctl openssh rustup s
 rustup default stable
 $1 -S ani-cli-git trackma-git brave-bin light
 
+# gnome keyring
+$1 -S gnome-keyring libsecret seahorse
 
 # hyprland
 # $1 -S hyprland-git xdg-desktop-portal-hyprland-git xdg-desktop-portal-gtk hyprlock-git hyprlang-git hyprwayland-scanner-git hyprcursor-git hyprpaper-git hypridle-git
