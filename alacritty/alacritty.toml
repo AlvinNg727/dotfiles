@@ -17,6 +17,6 @@ blur = true
 normal = { family = "CaskaydiaCove Nerd Font Mono", style = "Regular" }
 size = 11
 
-[cursor.style]
-shape = "Underline"
-blinking = "On"
+# [cursor.style]
+# shape = "Underline"
+# blinking = "On"
