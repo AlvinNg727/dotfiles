@@ -1,4 +1,7 @@
-#!/bin/sh
+#!/bin/bash
+
+# Some distros don't have i2c-dev module loaded by default, so we load it manually
+modprobe i2c-dev
 
 clear
 function clear_stdin() {
@@ -8,16 +11,23 @@ function clear_stdin() {
     stty "$old_tty_settings"
 }
 
-if [ $# -ne 1 ]; then
-    echo "Kindly specify the i2c bus number. The default i2c bus number is 3."
-    echo "Command as following:"
-    echo "$0 i2c-bus-number"
-    i2c_bus=3
-else
-    i2c_bus=$1
+# Function to find the correct I2C bus (third DesignWare adapter)
+find_i2c_bus() {
+    local adapter_description="Synopsys DesignWare I2C adapter"
+    local dw_count=$(i2cdetect -l | grep -c "$adapter_description")
+    if [ "$dw_count" -lt 3 ]; then
+        echo "Error: Less than 3 DesignWare I2C adapters found." >&2
+        return 1
+    fi
+    local bus_number=$(i2cdetect -l | grep "$adapter_description" | awk '{print $1}' | sed 's/i2c-//' | sed -n '3p')
+    echo "$bus_number"
+}
+i2c_bus=$(find_i2c_bus)
+if [ -z "$i2c_bus" ]; then
+    echo "Error: Could not find the third DesignWare I2C bus for the audio IC."
+    exit 1
 fi
-
-echo "i2c bus is $i2c_bus"
+echo "Using I2C bus: $i2c_bus"
 i2c_addr=(0x3f 0x38)
 
 count=0
