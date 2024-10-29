@@ -1,6 +1,6 @@
 return {
     {
-        "folke/which-key.nvim",
+        "j-hui/fidget.nvim",
         event = "VeryLazy",
         opts = {},
     },

@@ -1,48 +1,60 @@
 return {
-	{
-		"nvim-treesitter/nvim-treesitter",
-		event = "VeryLazy",
-		build = ":TSUpdate",
-		config = function()
-			require("nvim-treesitter.configs").setup({
-				ensure_installed = {
-					"bash",
-					"c",
-					"comment",
-					"cpp",
-					"css",
-					"diff",
-					"fish",
-					"json",
-					"latex",
-					"lua",
-					"markdown",
-					"python",
-					"rust",
-					"toml",
-					"vim",
-					"vimdoc",
-				},
-				sync_install = true,
-				auto_install = false,
-				highlight = {
-					enable = true,
-					disable = {},
-					additional_vim_regex_highlighting = false,
-				},
-				indent = {
-					enable = true,
-				},
-				incremental_selection = {
-					enable = true,
-					keymaps = {
-						init_selection = "<CR>",
-						scope_incremental = "<CR>",
-						node_incremental = "<TAB>",
-						node_decremental = "<S-TAB>",
-					},
-				},
-			})
-		end,
-	},
+    {
+        "nvim-treesitter/nvim-treesitter",
+        dependencies = {
+            { "nvim-treesitter/nvim-treesitter-textobjects", event = "VeryLazy" },
+        },
+        event = "VeryLazy",
+        build = ":TSUpdate",
+        config = function()
+            require("nvim-treesitter.configs").setup({
+                ensure_installed = {
+                    "bash",
+                    "c",
+                    "comment",
+                    "cpp",
+                    "css",
+                    "diff",
+                    "dockerfile",
+                    "fish",
+                    "json",
+                    "lua",
+                    "markdown",
+                    "markdown_inline",
+                    "python",
+                    "regex",
+                    "rust",
+                    "toml",
+                    "vim",
+                    "vimdoc",
+                    "yaml",
+                },
+                sync_install = true,
+                auto_install = true,
+                highlight = {
+                    enable = true,
+                    additional_vim_regex_highlighting = false,
+                },
+                incremental_selection = {
+                    enable = false,
+                    keymaps = {
+                        init_selection = "gnn",
+                        node_incremental = "grn",
+                        scope_incremental = "grc",
+                        node_decremental = "grm",
+                    },
+                },
+                indent = {
+                    enable = true,
+                },
+            })
+        end,
+    },
+    {
+        "nvim-treesitter/nvim-treesitter-context",
+        event = "VeryLazy",
+        opts = {
+            max_lines = 3,
+        },
+    },
 }
