@@ -1,6 +1,6 @@
 return {
     {
-        "folke/which-key.nvim",
+        "IogaMaster/neocord",
         event = "VeryLazy",
         opts = {},
     },

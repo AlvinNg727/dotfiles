@@ -1,14 +1,14 @@
 return {
-	{
-		"NvChad/nvim-colorizer.lua",
-		event = "VeryLazy",
-		config = function()
-			require("colorizer").setup({
-				filetypes = { "*" },
-				user_default_options = {
-					css = true,
-				},
-			})
-		end,
-	},
+    {
+        "NvChad/nvim-colorizer.lua",
+        event = { "BufReadPost", "BufNewFile" },
+        opts = {
+            filetypes = { "*" },
+            user_default_options = {
+                RRGGBBAA = true, -- #RRGGBBAA hex codes
+                AARRGGBB = true, -- 0xAARRGGBB hex codes
+                css = true, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
+            },
+        },
+    },
 }
