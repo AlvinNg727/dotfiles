@@ -19,4 +19,6 @@ pyenv init - | source
 
 # fzf --fish | source
 
+zoxide init fish --cmd cd | source
+
 starship init fish | source
