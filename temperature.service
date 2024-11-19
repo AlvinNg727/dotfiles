@@ -1,8 +1,0 @@
-[Unit]
-Description=Sym link cpu temp to a file
-
-[Service]
-ExecStart=/home/alvin/.config/waybar/scripts/temperature
-
-[Install]
-WantedBy=multi-user.target
