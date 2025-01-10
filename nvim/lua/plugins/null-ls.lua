@@ -41,6 +41,7 @@ return {
                         return client.name == "null-ls"
                     end,
                     bufnr = bufnr,
+                    timeout_ms = 5000,
                 })
             end
 
@@ -66,7 +67,9 @@ return {
                 on_attach = on_attach,
             })
 
-            vim.keymap.set("n", "<leader>fa", vim.lsp.buf.format, { desc = "Format file" })
+            vim.keymap.set("n", "<leader>fa", function()
+                vim.lsp.buf.format({ timeout_ms = 5000 })
+            end, { desc = "Format file" })
         end,
     },
 }
