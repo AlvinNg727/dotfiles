@@ -20,6 +20,7 @@ config.cursor_thickness = "200%"
 config.force_reverse_video_cursor = true
 
 config.hide_tab_bar_if_only_one_tab = true
+config.use_fancy_tab_bar = false
 
 config.window_background_opacity = 0.8
 
@@ -28,10 +29,10 @@ config.window_frame = {
 }
 
 config.window_padding = {
-	left = "2pt",
-	right = "2pt",
-	top = "2pt",
-	bottom = "2pt",
+	left = "3pt",
+	right = "3pt",
+	top = "3pt",
+	bottom = "3pt",
 }
 
 config.launch_menu = {
