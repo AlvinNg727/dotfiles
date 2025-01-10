@@ -4,7 +4,7 @@
 pacman -Syu
 
 # git
-pacman -S git github-cli
+pacman -S git github-cli git-delta
 
 # nerd fonts
 pacman -S ttf-cascadia-code-nerd
