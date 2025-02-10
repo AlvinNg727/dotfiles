@@ -11,11 +11,16 @@ return {
                 "nvim-telescope/telescope-fzf-native.nvim",
                 build = "make",
             },
+            {
+                "nvim-telescope/telescope-frecency.nvim",
+                event = "VeryLazy",
+            },
         },
         event = "VeryLazy",
         config = function()
             local builtin = require("telescope.builtin")
             local actions = require("telescope.actions")
+            local extensions = require("telescope").extensions
 
             -- Find
             vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Find files (cwd)" })
@@ -57,8 +62,13 @@ return {
 
             require("telescope").load_extension("fzf")
             require("telescope").load_extension("persisted")
+            require("telescope").load_extension("frecency")
 
             vim.keymap.set("n", "<leader>fp", "<cmd>Telescope persisted<CR>", { desc = "Find projects" })
+
+            vim.keymap.set("n", "<leader>fq", function()
+                extensions.frecency.frecency({ workspace = "CWD" })
+            end, { desc = "Find files frecency (cwd)" })
         end,
     },
 }
