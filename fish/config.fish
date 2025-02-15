@@ -26,8 +26,9 @@ set fzf_preview_dir_cmd eza --all --color=always
 set fzf_preview_file_cmd bat
 set fzf_diff_highlighter delta --color-only --paging=never
 
-pyenv init - | source
-
 zoxide init fish --cmd cd | source
 
 starship init fish | source
+
+uv generate-shell-completion fish | source
+uvx --generate-shell-completion fish | source
