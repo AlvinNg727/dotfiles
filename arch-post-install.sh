@@ -1,43 +1,130 @@
 #!/bin/bash
 
-# Update packages
-pacman -Syu
+sudo pacman -Syu
 
-# git
-pacman -S git github-cli git-delta
+# Git
+sudo pacman -S --needed git github-cli git-delta
 
-# nerd fonts
-pacman -S ttf-cascadia-code-nerd
-
-# stuff i use
-pacman -S fish alacritty neovim discord neofetch btop playerctl openssh rustup steam brightnessctl bat firefox wl-clipboard xdg-user-dirs thunar file-roller thunar-archive-plugin tumbler eza bc zoxide
+# Setup paru
+sudo pacman -S --needed base-devel rustup
 rustup default stable
-$1 -S ani-cli-git trackma-git brave-bin light
+cd ~ && git clone https://aur.archlinux.org/paru.git
+cd paru
+makepkg -si
+cd ~ && rm -rf paru
 
-# gnome keyring
-$1 -S gnome-keyring libsecret seahorse
+# Setup audio (fix audio for yoga pro 9i D:)
+sudo cp ~/dotfiles/yoga_speaker/yoga-16imh9-speakers.service /etc/systemd/system/
+paru -S --needed i2c-tools
+sudo cp ~/dotfiles/yoga_speaker/2pa-byps.sh /usr/local/bin/
+sudo systemctl daemon-reload
+sudo systemctl enable --now yoga-16imh9-speakers.service
+sudo cp ~/dotfiles/yoga_speaker/disable-hda-power-save.conf /etc/modprobe.d/
 
-# hyprland
-# $1 -S hyprland-git xdg-desktop-portal-hyprland-git xdg-desktop-portal-gtk hyprlock-git hyprlang-git hyprwayland-scanner-git hyprcursor-git hyprpaper-git hypridle-git
+# Setup bluetooth
+paru -S --needed blueman \
+    bluez \
+    bluez-utils
+sudo systemctl enable --now bluetooth.service
 
-# nwg-look
-# $1 -S nwg-look
+# General stuff
+paru -S --needed bat \
+    btop \
+    eza \
+    fastfetch \
+    fd \
+    firefox \
+    fish \
+    imagemagick \
+    man-db \
+    neovim \
+    npm \
+    ripgrep \
+    starship \
+    unzip \
+    wezterm-git \
+    wget \
+    xdg-user-dirs \
+    yazi \
+    zoxide
+cd ~ && xdg-user-dirs-update
+cp -r ~/dotfiles/bat ~/.config/
+cp -r ~/dotfiles/btop ~/.config/
+cp -r ~/dotfiles/fastfetch ~/.config/
+cp -r ~/dotfiles/fish ~/.config/
+cp -r ~/dotfiles/nvim ~/.config/
+cp ~/dotfiles/starship.toml ~/.config/
+cp -r ~/dotfiles/wezterm ~/.config/
 
-# waybar
-# $1 -S waybar
+# Secrets
+paru -S --needed gnome-keyring \
+    libsecret \
+    seahorse
 
-# dunst
-# $1 -S dunst libnotify
+# Window manager
+paru -S --needed ani-cli \
+    brightnessctl \
+    ffmpegthumbnailer \
+    file-roller \
+    grim \
+    hyprland-meta-git \
+    mpv \
+    network-manager-applet \
+    playerctl \
+    qt5-wayland \
+    qt6-wayland \
+    rofi-wayland \
+    slurp \
+    swaync \
+    swayosd-git \
+    thunar \
+    thunar-archive-plugin \
+    tumbler \
+    vesktop-bin \
+    waybar \
+    wl-clipboard \
+    xdg-desktop-portal-gtk
+sudo systemctl enable --now swayosd-libinput-backend.service
+cp -r ~/dotfiles/hypr ~/.config/
+cp -r ~/dotfiles/rofi ~/.config/
+cp -r ~/dotfiles/wayland ~/.config/
+cp -r ~/dotfiles/wallpaper ~/.config/
+cp ~/dotfiles/electron-flags.conf ~/.config/
 
-# rofi
-# pacman -S rofi-wayland
+# Fonts
+paru -S --needed noto-fonts \
+    noto-fonts-cjk \
+    noto-fonts-emoji \
+    ttf-cascadia-code-nerd
 
-# fonts
-pacman -S noto-fonts noto-fonts-emoji noto-fonts-cjk
+# Theming
+paru -S --needed nwg-look \
+    materia-gtk-theme \
+    papirus-icon-theme
 
-# starship
-pacman -S starship
+# NVIDIA
+paru -S --needed cuda \
+    egl-wayland \
+    lib32-nvidia-utils \
+    linux-headers \
+    nvidia-open-dkms \
+    nvidia-utils \
+    nvtop
 
-# theme shit
-sudo pacman -S materia-gtk-theme
-$1 -S papirus-icon-theme-git
+# Code shit
+paru -S --needed docker \
+    docker-buildx \
+    docker-compose \
+    lazydocker-bin \
+    lazygit \
+    nvidia-container-toolkit \
+    openssh \
+    python-black \
+    uv \
+    visual-studio-code-bin
+sudo systemctl enable --now docker.socket
+cp ~/dotfiles/code-flags.conf ~/.config/
+
+# Others
+paru -S --needed prismlauncher \
+    steam
