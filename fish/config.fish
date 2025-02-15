@@ -4,11 +4,6 @@ alias ls="eza -x --color=always --icons=always --group-directories-first --git -
 
 alias gg="lazygit"
 
-# Pokemon :D
-# function fish_greeting
-#     pokemon-colorscripts -rn charmander,charizard,gengar,greninja,rayquaza --no-title
-# end
-
 function y
     set tmp (mktemp -t "yazi-cwd.XXXXXX")
     yazi $argv --cwd-file="$tmp"
@@ -21,10 +16,6 @@ end
 if status is-interactive
     # Commands to run in interactive sessions can go here
 end
-
-set fzf_preview_dir_cmd eza --all --color=always
-set fzf_preview_file_cmd bat
-set fzf_diff_highlighter delta --color-only --paging=never
 
 zoxide init fish --cmd cd | source
 
