@@ -1,9 +1,7 @@
 return {
     {
         "nvim-lualine/lualine.nvim",
-        dependencies = {
-            "nvim-tree/nvim-web-devicons",
-        },
+        dependencies = { "nvim-tree/nvim-web-devicons" },
         event = "VeryLazy",
         opts = {
             options = {
@@ -11,24 +9,26 @@ return {
                 component_separators = "",
                 section_separators = "",
                 globalstatus = true,
+                disabled_filetypes = {
+                    statusline = {
+                        "snacks_dashboard",
+                    },
+                },
             },
             sections = {
                 lualine_a = { "mode" },
-                lualine_b = { "filename" },
+                lualine_b = {
+                    { "filetype", icon_only = true, padding = { left = 1, right = 0 } },
+                    { "filename", padding = { left = 0, right = 1 } },
+                },
                 lualine_c = { "branch", "diagnostics" },
                 lualine_x = { "diff", "searchcount" },
                 lualine_y = { "progress" },
                 lualine_z = { "location" },
             },
             extensions = {
-                "fugitive",
-                "fzf",
                 "lazy",
-                "mason",
                 "oil",
-                "quickfix",
-                "toggleterm",
-                "trouble",
             },
         },
     },

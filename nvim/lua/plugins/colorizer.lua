@@ -1,13 +1,13 @@
 return {
     {
-        "NvChad/nvim-colorizer.lua",
-        event = { "BufReadPost", "BufNewFile" },
+        "catgoose/nvim-colorizer.lua",
+        event = "BufReadPre",
         opts = {
-            filetypes = { "*" },
+            lazy_load = true,
             user_default_options = {
-                RRGGBBAA = true, -- #RRGGBBAA hex codes
-                AARRGGBB = true, -- 0xAARRGGBB hex codes
-                css = true, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
+                names = false,
+                RRGGBBAA = true,
+                AARRGGBB = true,
             },
         },
     },

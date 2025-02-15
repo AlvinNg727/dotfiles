@@ -2,17 +2,14 @@ return {
     {
         "RRethy/vim-illuminate",
         event = "VeryLazy",
-        config = function()
-            require("illuminate").configure({
-                delay = 200,
-                providers = {
-                    "lsp",
-                    "treesitter",
-                },
-                large_file_providers = {
-                    "lsp",
-                },
-            })
+        opts = {
+            providers = {
+                "lsp",
+                "treesitter",
+            },
+        },
+        config = function(_, opts)
+            require("illuminate").configure(opts)
         end,
     },
 }

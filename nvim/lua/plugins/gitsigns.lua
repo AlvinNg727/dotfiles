@@ -17,35 +17,35 @@ return {
                 -- navigation
                 map("n", "]h", function()
                     gitsigns.nav_hunk("next")
-                end, { desc = "Next hunk" })
+                end, { desc = "Next Hunk" })
                 map("n", "[h", function()
                     gitsigns.nav_hunk("prev")
-                end, { desc = "Previous hunk" })
+                end, { desc = "Previous Hunk" })
 
                 map("n", "<leader>bl", function()
                     gitsigns.blame_line({ full = true })
-                end, { desc = "Blame line" })
+                end, { desc = "Blame Line" })
 
-                map("n", "<leader>gs", gitsigns.stage_hunk, { desc = "Stage hunk" })
-                map("v", "<leader>gs", function()
+                map("n", "<leader>ghs", gitsigns.stage_hunk, { desc = "Stage Hunk" })
+                map("v", "<leader>ghs", function()
                     gitsigns.stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
-                end, { desc = "Stage hunk" })
-                map("n", "<leader>gS", gitsigns.stage_buffer, { desc = "Stage buffer" })
+                end, { desc = "Stage Hunk" })
+                map("n", "<leader>ghS", gitsigns.stage_buffer, { desc = "Stage Buffer" })
 
-                map("n", "<leader>gr", gitsigns.reset_hunk, { desc = "Reset hunk" })
-                map("v", "<leader>gr", function()
+                map("n", "<leader>ghr", gitsigns.reset_hunk, { desc = "Reset Hunk" })
+                map("v", "<leader>ghr", function()
                     gitsigns.reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
-                end, { desc = "Reset hunk" })
-                map("n", "<leader>gR", gitsigns.reset_buffer, { desc = "Reset buffer" })
+                end, { desc = "Reset Hunk" })
+                map("n", "<leader>ghR", gitsigns.reset_buffer, { desc = "Reset Buffer" })
 
-                map("n", "<leader>gph", gitsigns.preview_hunk, { desc = "Preview hunk" })
+                map("n", "<leader>ghp", gitsigns.preview_hunk, { desc = "Preview Hunk" })
 
-                map("n", "<leader>gd", gitsigns.diffthis, { desc = "Git diff this" })
-                map("n", "<leader>gD", function()
+                map("n", "<leader>ghd", gitsigns.diffthis, { desc = "Git Diff This" })
+                map("n", "<leader>ghD", function()
                     gitsigns.diffthis("~")
-                end, { desc = "Git diff this" })
-                map("n", "<leader>td", gitsigns.toggle_deleted, { desc = "Git toggle deleted" })
-                map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", { desc = "Select hunk" })
+                end, { desc = "Git Diff This ~" })
+                map("n", "<leader>td", gitsigns.toggle_deleted, { desc = "Git Toggle Deleted" })
+                map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", { desc = "Git Select Hunk" })
             end,
         },
     },
