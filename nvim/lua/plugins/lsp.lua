@@ -14,15 +14,50 @@ local servers = {
         settings = {
             basedpyright = {
                 disableOrganizeImports = true, -- use ruff's import organizer
-            },
-            python = {
                 analysis = {
-                    ignore = { "*" },
+                    autoImportCompletions = true,
+                    autoSearchPaths = true,
+                    typeCheckingMode = "standard",
+                    useLibraryCodeForTypes = true,
+                    diagnosticSeverityOverrides = {
+                        reportMissingTypeStubs = "information",
+                        reportUnusedVariable = false,
+                        reportUndefinedVariable = false,
+                    },
+                    -- ignore = { "*" },
                 },
             },
         },
     }, -- python
-    { name = "ruff" }, -- python
+    {
+        name = "ruff",
+        init_options = {
+            settings = {
+                configurationPreference = "filesystemFirst",
+                lint = {
+                    preview = true,
+                    select = {
+                        "F",
+                        "E4",
+                        "E5",
+                        "E7",
+                        "E9",
+                        "N",
+                        "ANN",
+                        "B",
+                        "A",
+                        "Q",
+                        "ARG",
+                        "PLC",
+                        "PLE",
+                        "PLR",
+                        "PLW",
+                        "NPY",
+                    },
+                },
+            },
+        },
+    }, -- python
     { name = "codespell", lsp = false }, -- general
 }
 
@@ -90,6 +125,9 @@ return {
                     if server.settings then
                         config.settings = server.settings
                     end
+                    if server.init_options then
+                        config.init_options = server.init_options
+                    end
 
                     config.capabilities = blink.get_lsp_capabilities(config.capabilities)
 
@@ -110,6 +148,16 @@ return {
                     end
                 end,
                 desc = "LSP: Disable hover capability from Ruff",
+            })
+
+            vim.api.nvim_create_autocmd("LspAttach", {
+                group = vim.api.nvim_create_augroup("user_lsp_config", {}),
+                callback = function(args)
+                    local client = vim.lsp.get_client_by_id(args.data.client_id)
+                    if client.server_capabilities.inlayHintProvider then
+                        vim.lsp.inlay_hint.enable()
+                    end
+                end,
             })
 
             ---@type table<number, {token:lsp.ProgressToken, msg:string, done:boolean}[]>
