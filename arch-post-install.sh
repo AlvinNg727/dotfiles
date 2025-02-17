@@ -80,9 +80,11 @@ paru -S --needed ani-cli \
     thunar \
     thunar-archive-plugin \
     tumbler \
+    udiskie \
     vesktop-bin \
     waybar \
     wl-clipboard \
+    wl-clip-persist \
     xdg-desktop-portal-gtk
 sudo systemctl enable --now swayosd-libinput-backend.service
 cp -r ~/dotfiles/hypr ~/.config/
@@ -101,6 +103,12 @@ paru -S --needed noto-fonts \
 paru -S --needed nwg-look \
     materia-gtk-theme \
     papirus-icon-theme
+
+# Power
+paru -S auto-cpufreq \
+    thermald
+sudo systemctl enable --now auto-cpufreq
+sudo systemctl enable --now thermald.service
 
 # NVIDIA
 paru -S --needed cuda \
