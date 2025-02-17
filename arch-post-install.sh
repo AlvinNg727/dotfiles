@@ -136,3 +136,6 @@ cp ~/dotfiles/code-flags.conf ~/.config/
 # Others
 paru -S --needed prismlauncher \
     steam
+
+# Wallpapers (this may take long time to clone lol)
+git clone https://github.com/alvinng727/wallpaper.git ~/.config/wallpaper
