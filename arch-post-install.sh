@@ -85,7 +85,8 @@ paru -S --needed ani-cli \
     waybar \
     wl-clipboard \
     wl-clip-persist \
-    xdg-desktop-portal-gtk
+    xdg-desktop-portal-gtk \
+    xorg-xhost
 sudo systemctl enable --now swayosd-libinput-backend.service
 cp -r ~/dotfiles/hypr ~/.config/
 cp -r ~/dotfiles/rofi ~/.config/
