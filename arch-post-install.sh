@@ -87,7 +87,9 @@ paru -S --needed ani-cli \
     wl-clipboard \
     wl-clip-persist \
     xdg-desktop-portal-gtk \
-    xorg-xhost
+    xorg-xhost \
+    zathura \
+    zathura-pdf-mupdf
 sudo systemctl enable --now swayosd-libinput-backend.service
 cp -r ~/dotfiles/hypr ~/.config/
 cp -r ~/dotfiles/rofi ~/.config/
