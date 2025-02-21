@@ -83,6 +83,7 @@ paru -S --needed ani-cli \
     udiskie \
     vesktop-bin \
     waybar \
+    wlogout \
     wl-clipboard \
     wl-clip-persist \
     xdg-desktop-portal-gtk \
