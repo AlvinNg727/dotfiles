@@ -77,8 +77,10 @@ paru -S --needed ani-cli \
     slurp \
     swaync \
     swayosd-git \
+    thefuck \
     thunar \
     thunar-archive-plugin \
+    tldr \
     tumbler \
     udiskie \
     vesktop-bin \
