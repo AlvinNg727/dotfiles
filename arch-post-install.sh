@@ -137,7 +137,8 @@ paru -S --needed clang \
     openssh \
     python-black \
     uv \
-    visual-studio-code-bin
+    visual-studio-code-bin \
+    xorg-xauth
 sudo systemctl enable --now docker.socket
 cp ~/dotfiles/code-flags.conf ~/.config/
 
