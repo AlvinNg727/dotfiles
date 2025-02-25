@@ -58,6 +58,7 @@ local servers = {
             },
         },
     }, -- python
+    { name = "lemminx" }, -- xml
     { name = "codespell", lsp = false }, -- general
 }
 
