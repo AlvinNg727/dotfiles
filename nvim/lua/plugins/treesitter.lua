@@ -16,6 +16,7 @@ return {
                 "dockerfile",
                 "fish",
                 "json",
+                "jsonc",
                 "lua",
                 "markdown",
                 "markdown_inline",
