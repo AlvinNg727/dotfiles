@@ -68,6 +68,7 @@ paru -S --needed ani-cli \
     file-roller \
     grim \
     hyprland-meta-git \
+    imv \
     mpv \
     network-manager-applet \
     playerctl \
