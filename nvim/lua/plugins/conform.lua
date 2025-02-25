@@ -5,8 +5,6 @@ return {
         cmd = { "ConformInfo" },
         opts = {
             formatters_by_ft = {
-                c = { "clang_format" },
-                cpp = { "clang_format" },
                 lua = { "stylua" },
                 markdown = { "markdownlint" },
                 python = { "ruff_organize_imports", "ruff_format", "ruff_fix" },
@@ -14,12 +12,7 @@ return {
             },
             format_on_save = {
                 timeout_ms = 1000,
-            },
-            formatters = {
-                clang_format = {
-                    command = "clang-format",
-                    args = { "--style=file", "--fallback-style=Google" },
-                },
+                lsp_format = "fallback",
             },
         },
         keys = {
