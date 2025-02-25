@@ -54,6 +54,7 @@ local servers = {
                         "PLW",
                         "NPY",
                     },
+                    ignore = { "F401" },
                 },
             },
         },
@@ -149,16 +150,6 @@ return {
                     end
                 end,
                 desc = "LSP: Disable hover capability from Ruff",
-            })
-
-            vim.api.nvim_create_autocmd("LspAttach", {
-                group = vim.api.nvim_create_augroup("user_lsp_config", {}),
-                callback = function(args)
-                    local client = vim.lsp.get_client_by_id(args.data.client_id)
-                    if client.server_capabilities.inlayHintProvider then
-                        vim.lsp.inlay_hint.enable()
-                    end
-                end,
             })
 
             ---@type table<number, {token:lsp.ProgressToken, msg:string, done:boolean}[]>
