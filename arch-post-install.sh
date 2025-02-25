@@ -127,7 +127,8 @@ paru -S --needed cuda \
     nvtop
 
 # Code shit
-paru -S --needed docker \
+paru -S --needed clang \
+    docker \
     docker-buildx \
     docker-compose \
     lazydocker-bin \
