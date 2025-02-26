@@ -209,12 +209,6 @@ return {
                 desc = "Hover",
             },
             {
-                "<leader>ca",
-                vim.lsp.buf.code_action,
-                mode = { "n", "v" },
-                desc = "Code Action",
-            },
-            {
                 "<leader>cc",
                 vim.lsp.codelens.run,
                 mode = { "n", "v" },
