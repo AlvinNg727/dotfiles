@@ -25,6 +25,7 @@ local servers = {
                         reportUnusedVariable = false,
                         reportUndefinedVariable = false,
                     },
+                    stubPath = vim.fn.stdpath("data") .. "/lazy/python-type-stubs",
                     -- ignore = { "*" },
                 },
             },
@@ -66,6 +67,9 @@ local servers = {
 }
 
 return {
+    {
+        "microsoft/python-type-stubs",
+    },
     {
         "williamboman/mason.nvim",
         build = ":MasonUpdate",
