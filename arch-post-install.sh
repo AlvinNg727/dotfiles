@@ -128,6 +128,7 @@ paru -S --needed cuda \
 
 # Code shit
 paru -S --needed clang \
+    direnv \
     docker \
     docker-buildx \
     docker-compose \
