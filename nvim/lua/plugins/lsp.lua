@@ -4,7 +4,8 @@ local servers = {
     { name = "clang-format", lsp = false }, -- C/C++
     { name = "docker_compose_language_service" }, -- docker compose
     { name = "dockerls" }, -- docker
-    { name = "hadolint", lsp = false }, --docker
+    { name = "hadolint", lsp = false }, -- docker
+    { name = "texlab" }, -- latex
     { name = "lua_ls" }, -- lua
     { name = "stylua", lsp = false }, --lua
     { name = "marksman" }, -- markdown
@@ -59,6 +60,7 @@ local servers = {
             },
         },
     }, -- python
+    { name = "taplo" }, -- toml
     { name = "lemminx" }, -- xml
     { name = "codespell", lsp = false }, -- general
 }
