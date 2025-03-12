@@ -61,6 +61,13 @@ return {
                 matcher = {
                     frecency = true,
                 },
+                ui_select = true,
+                previewers = {
+                    diff = {
+                        builtin = true,
+                        cmd = { "delta --color-only" },
+                    },
+                },
             },
             quickfile = {
                 enabled = true,
