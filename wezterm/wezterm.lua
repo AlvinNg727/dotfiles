@@ -1,11 +1,20 @@
 local wezterm = require("wezterm")
 local act = wezterm.action
+local smart_splits = wezterm.plugin.require("https://github.com/mrjones2014/smart-splits.nvim")
 local one_dark = require("theme")
 
 local config = wezterm.config_builder()
 
-config.front_end = "WebGpu"
-config.webgpu_power_preference = "LowPower"
+-- config.front_end = "WebGpu"
+-- config.webgpu_power_preference = "LowPower"
+for _, gpu in ipairs(wezterm.gui.enumerate_gpus()) do
+	if gpu.backend == "Gl" and gpu.device_type == "IntegratedGpu" then
+		config.webgpu_preferred_adapter = gpu
+		config.front_end = "WebGpu"
+		break
+	end
+end
+
 config.enable_wayland = true
 
 -- FPS
@@ -105,5 +114,13 @@ config.key_tables = {
 		{ key = "q", action = "PopKeyTable" },
 	},
 }
+
+smart_splits.apply_to_config(config, {
+	direction_keys = { "h", "j", "k", "l" },
+
+	modifiers = {
+		move = "CTRL|SHIFT",
+	},
+})
 
 return config
