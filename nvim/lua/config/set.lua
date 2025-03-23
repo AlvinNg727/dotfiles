@@ -6,7 +6,7 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.hidden = true
 vim.opt.wrap = false
-vim.opt.completeopt = menu, menuone, noselect
+vim.opt.completeopt = menu, menuone, noselect, popup
 vim.opt.wildmenu = true
 vim.opt.confirm = true
 vim.opt.cursorline = true
@@ -24,6 +24,7 @@ vim.opt.updatetime = 50
 vim.o.hlsearch = true
 vim.o.clipboard = "unnamedplus"
 vim.o.statuscolumn = ""
+vim.opt.splitright = true
 
 vim.api.nvim_create_autocmd("TextYankPost", {
     desc = "Highlight when yanking text",
