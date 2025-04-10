@@ -123,6 +123,7 @@ sudo systemctl enable --now thermald.service
 # NVIDIA
 paru -S --needed cuda \
     egl-wayland \
+    libva-nvidia-driver \
     lib32-nvidia-utils \
     linux-headers \
     nvidia-open-dkms \
