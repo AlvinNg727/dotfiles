@@ -48,6 +48,7 @@ paru -S --needed bat \
     wget \
     xdg-user-dirs \
     yazi \
+    zen-browser-bin \
     zoxide
 cd ~ && xdg-user-dirs-update
 cp -r ~/dotfiles/bat ~/.config/
