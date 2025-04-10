@@ -36,6 +36,8 @@ paru -S --needed bat \
     firefox \
     fish \
     imagemagick \
+    intel-media-driver \
+    intel-ucode \
     man-db \
     neovim \
     npm \
