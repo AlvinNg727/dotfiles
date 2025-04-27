@@ -31,7 +31,34 @@ return {
         },
         config = function(_, opts)
             require("onedark").setup(opts)
-            require("onedark").load()
+            -- require("onedark").load()
+        end,
+    },
+    {
+        "olimorris/onedarkpro.nvim",
+        lazy = false,
+        priority = 1000,
+        opts = {
+            highlights = {
+                DiagnosticUnderlineError = { sp = "${red}", style = "undercurl" },
+                DiagnosticUnderlineWarn = { sp = "${yellow}", style = "undercurl" },
+                DiagnosticUnderlineInfo = { sp = "${blue}", style = "undercurl" },
+                DiagnosticUnderlineHint = { sp = "${cyan}", style = "undercurl" },
+                ["@odp.import_module.python"] = { link = "@module" },
+            },
+            styles = {
+                comments = "italic",
+            },
+            options = {
+                cursorline = true,
+                lualine_transparency = true,
+                highlight_inactive_windows = false,
+            },
+        },
+        config = function(_, opts)
+            require("onedarkpro").setup(opts)
+
+            vim.cmd("colorscheme onedark")
         end,
     },
     {

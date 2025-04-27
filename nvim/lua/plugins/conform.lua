@@ -8,16 +8,24 @@ return {
                 c = { lsp_format = "first" },
                 cpp = { lsp_format = "first" },
                 lua = { "stylua" },
-                markdown = { "markdownlint" },
+                markdown = { "markdownlint", "injected" },
                 python = { "ruff_organize_imports", "ruff_format", "ruff_fix" },
-                ["*"] = { "codespell" },
+                tex = { "latexindent" },
+                -- ["*"] = { "codespell" },
             },
             default_format_opts = {
-                lsp_format = "first",
+                lsp_format = "fallback",
             },
             format_on_save = {
-                timeout_ms = 500,
-                lsp_format = "first",
+                timeout_ms = 1000,
+                lsp_format = "fallback",
+            },
+            formatters = {
+                ruff_fix = {
+                    append_args = {
+                        "--ignore=F401",
+                    },
+                },
             },
         },
         keys = {
@@ -26,6 +34,7 @@ return {
                 function()
                     require("conform").format({ async = true })
                 end,
+                mode = { "n", "v" },
                 desc = "Format Buffer",
             },
         },

@@ -1,38 +1,27 @@
 return {
     {
-        "Saghen/blink.compat",
+        "saghen/blink.compat",
         version = "*",
         lazy = true,
         opts = {},
     },
     {
-        "giuxtaposition/blink-cmp-copilot",
-    },
-    {
         "saghen/blink.cmp",
-        version = "*",
-        dependencies = { "rafamadriz/friendly-snippets", "Saghen/blink.compat", "giuxtaposition/blink-cmp-copilot" },
+        version = "1.*",
+        dependencies = { "rafamadriz/friendly-snippets", "fang2hou/blink-copilot" },
         opts = {
             keymap = { preset = "enter" },
             appearance = {
-                use_nvim_cmp_as_default = false,
                 nerd_font_variant = "mono",
             },
             completion = {
+                trigger = {
+                    show_on_blocked_trigger_characters = {},
+                },
                 menu = {
                     draw = {
                         columns = { { "kind_icon" }, { "label", "label_description", gap = 1 }, { "kind" } },
                         treesitter = { "lsp" },
-                    },
-                    -- auto_show = function(ctx)
-                    --     return ctx.mode ~= "cmdline"
-                    -- end,
-                },
-                list = {
-                    selection = {
-                        preselect = function(ctx)
-                            return ctx.mode ~= "cmdline"
-                        end,
                     },
                 },
                 documentation = {
@@ -40,24 +29,11 @@ return {
                     auto_show_delay_ms = 200,
                 },
                 ghost_text = { enabled = true },
-                trigger = {
-                    show_on_blocked_trigger_characters = {},
-                },
             },
+            signature = { enabled = true },
             sources = {
-                default = { "lsp", "path", "snippets", "buffer", "lazydev", "copilot" },
+                default = { "lsp", "path", "buffer", "snippets", "lazydev", "copilot" },
                 providers = {
-                    lazydev = {
-                        name = "LazyDev",
-                        module = "lazydev.integrations.blink",
-                        score_offset = 100,
-                    },
-                    copilot = {
-                        name = "copilot",
-                        module = "blink-cmp-copilot",
-                        score_offset = 100,
-                        async = true,
-                    },
                     lsp = {
                         override = {
                             get_trigger_characters = function(self)
@@ -67,28 +43,24 @@ return {
                             end,
                         },
                     },
+                    path = {
+                        enabled = function()
+                            return vim.bo.filetype ~= "copilot-chat"
+                        end,
+                    },
+                    lazydev = {
+                        name = "LazyDev",
+                        module = "lazydev.integrations.blink",
+                        score_offset = 100,
+                    },
+                    copilot = {
+                        name = "copilot",
+                        module = "blink-copilot",
+                        score_offset = 100,
+                        async = true,
+                    },
                 },
             },
-            signature = { enabled = true },
         },
-        opts_extend = { "sources.default" },
     },
-    config = function(_, opts)
-        require("blink.cmp").setup(opts)
-
-        vim.api.nvim_create_autocmd("User", {
-            pattern = "BlinkCmpMenuOpen",
-            callback = function()
-                require("copilot.suggestion").dismiss()
-                vim.b.copilot_suggestion_hidden = true
-            end,
-        })
-
-        vim.api.nvim_create_autocmd("User", {
-            pattern = "BlinkCmpMenuClose",
-            callback = function()
-                vim.b.copilot_suggestion_hidden = false
-            end,
-        })
-    end,
 }

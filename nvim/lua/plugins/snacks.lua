@@ -4,9 +4,7 @@ return {
         priority = 1000,
         lazy = false,
         opts = {
-            bigfile = {
-                enabled = true,
-            },
+            bigfile = { enabled = true },
             dashboard = {
                 enabled = true,
                 sections = {
@@ -19,43 +17,22 @@ return {
             },
             image = {
                 enabled = true,
+                math = {
+                    enabled = false,
+                },
             },
             indent = {
                 enabled = true,
                 char = "▏",
-                hl = {
-                    "IndentBlanklineIndent1",
-                    "IndentBlanklineIndent2",
-                    "IndentBlanklineIndent3",
-                    "IndentBlanklineIndent4",
-                    "IndentBlanklineIndent5",
-                    "IndentBlanklineIndent6",
-                },
-                animate = {
-                    enabled = false,
-                },
+                animate = { enabled = false },
                 scope = {
                     char = "▏",
                     underline = true,
-                    hl = {
-                        "IndentBlanklineIndent1",
-                        "IndentBlanklineIndent2",
-                        "IndentBlanklineIndent3",
-                        "IndentBlanklineIndent4",
-                        "IndentBlanklineIndent5",
-                        "IndentBlanklineIndent6",
-                    },
                 },
             },
-            input = {
-                enabled = true,
-            },
-            lazygit = {
-                enabled = true,
-            },
-            notifier = {
-                enabled = true,
-            },
+            input = { enabled = true },
+            lazygit = { enabled = true },
+            notifier = { enabled = true },
             picker = {
                 enabled = true,
                 matcher = {
@@ -69,26 +46,22 @@ return {
                     },
                 },
             },
-            quickfile = {
-                enabled = true,
-            },
-            scope = {
-                enabled = true,
-            },
-            scroll = {
-                enabled = false,
-            },
-            statuscolumn = {
-                enabled = false,
-                git = { "GitSign" },
+            quickfile = { enabled = true },
+            scope = { enabled = true },
+            scroll = { enabled = false },
+            statuscolumn = { enabled = false },
+            styles = {
+                terminal = {
+                    wo = {
+                        winbar = "",
+                    },
+                },
             },
             terminal = {
                 enabled = true,
                 shell = "/usr/bin/fish -l",
             },
-            words = {
-                enabled = false,
-            },
+            words = { enabled = true },
         },
         keys = {
             {
@@ -203,6 +176,31 @@ return {
                     Snacks.gitbrowse()
                 end,
                 desc = "Git Browse",
+            },
+
+            {
+                "<leader>cR",
+                function()
+                    Snacks.rename.rename_file()
+                end,
+                desc = "Rename File",
+            },
+
+            {
+                "]]",
+                function()
+                    Snacks.words.jump(vim.v.count1)
+                end,
+                desc = "Next Reference",
+                mode = { "n", "t" },
+            },
+            {
+                "[[",
+                function()
+                    Snacks.words.jump(-vim.v.count1)
+                end,
+                desc = "Prev Reference",
+                mode = { "n", "t" },
             },
         },
     },

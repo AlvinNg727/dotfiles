@@ -44,7 +44,7 @@ return {
                 map("n", "<leader>ghD", function()
                     gitsigns.diffthis("~")
                 end, { desc = "Git Diff This ~" })
-                map("n", "<leader>td", gitsigns.toggle_deleted, { desc = "Git Toggle Deleted" })
+                map("n", "<leader>ghi", gitsigns.preview_hunk_inline, { desc = "Preview Hunk Inline" })
                 map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", { desc = "Git Select Hunk" })
             end,
         },

@@ -5,6 +5,7 @@ local servers = {
     { name = "docker_compose_language_service" }, -- docker compose
     { name = "dockerls" }, -- docker
     { name = "hadolint", lsp = false }, -- docker
+    { name = "latexindent", lsp = false }, -- latex
     { name = "texlab" }, -- latex
     { name = "lua_ls" }, -- lua
     { name = "stylua", lsp = false }, --lua
@@ -54,9 +55,13 @@ local servers = {
                         "PLE",
                         "PLR",
                         "PLW",
+                        "I",
                         "NPY",
                     },
-                    ignore = { "F401" },
+                    -- ignore = { "F401" },
+                },
+                format = {
+                    preview = true,
                 },
             },
         },
@@ -123,8 +128,7 @@ return {
         },
         lazy = false,
         config = function(_, opts)
-            local lspconfig = require("lspconfig")
-            local blink = require("blink.cmp")
+            vim.diagnostic.config({ virtual_text = true })
 
             for _, server in ipairs(servers) do
                 if server.lsp or server.lsp == nil then
@@ -137,9 +141,8 @@ return {
                         config.init_options = server.init_options
                     end
 
-                    config.capabilities = blink.get_lsp_capabilities(config.capabilities)
-
-                    lspconfig[server.name].setup(config)
+                    vim.lsp.enable(server.name)
+                    vim.lsp.config(server.name, config)
                 end
             end
 

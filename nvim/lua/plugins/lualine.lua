@@ -22,7 +22,7 @@ return {
                     { "filename", padding = { left = 0, right = 1 } },
                 },
                 lualine_c = { "branch", "diagnostics" },
-                lualine_x = { "diff", "searchcount" },
+                lualine_x = { "overseer", "diff", "searchcount" },
                 lualine_y = { "progress" },
                 lualine_z = { "location" },
             },

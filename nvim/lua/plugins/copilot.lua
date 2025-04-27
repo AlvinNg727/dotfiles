@@ -2,21 +2,12 @@ return {
     {
         "zbirenbaum/copilot.lua",
         cmd = "Copilot",
+        event = "InsertEnter",
         build = ":Copilot auth",
-        event = "BufReadPost",
         opts = {
             panel = { enabled = false },
-            suggestions = {
-                enabled = true,
-                auto_trigger = true,
-                hide_during_completion = false,
-                keymap = {
-                    accept = false,
-                },
-            },
-            filetypes = {
-                ["*"] = true,
-            },
+            suggestion = { enabled = false },
+            filetypes = { ["*"] = true },
             copilot_model = "gpt-4o-copilot",
         },
     },
@@ -27,9 +18,9 @@ return {
             { "nvim-lua/plenary.nvim" },
         },
         build = "make tiktoken",
-        cmd = "CopilotChat",
+        cmd = { "CopilotChat" },
         opts = {
-            model = "claude-3.7-sonnet-thought",
+            model = "gemini-2.5-pro",
             window = {
                 width = 0.4,
             },
