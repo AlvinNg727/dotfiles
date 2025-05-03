@@ -64,7 +64,7 @@ return {
                         prompt = "Quick Chat: ",
                     }, function(input)
                         if input ~= "" then
-                            require("CopilotChat").ask(input)
+                            require("CopilotChat").ask(input, { selection = require("CopilotChat.select").buffer })
                         end
                     end)
                 end,
