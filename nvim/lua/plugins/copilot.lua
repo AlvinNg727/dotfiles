@@ -8,7 +8,7 @@ return {
             panel = { enabled = false },
             suggestion = { enabled = false },
             filetypes = { ["*"] = true },
-            copilot_model = "gpt-4o-copilot",
+            -- copilot_model = "gpt-4o-copilot",
         },
     },
     {
