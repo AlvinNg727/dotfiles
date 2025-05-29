@@ -227,7 +227,7 @@ return {
             { "<leader>cr", vim.lsp.buf.rename, desc = "Rename" },
             {
                 "<leader>ch",
-                "<cmd>ClangdSwitchSourceHeader<CR>",
+                "<cmd>LspClangdSwitchSourceHeader<CR>",
                 ft = { "c", "cpp" },
                 desc = "Switch Source/Header (C/C++)",
             },
