@@ -134,6 +134,7 @@ return {
                 if server.lsp or server.lsp == nil then
                     local config = {}
 
+                    -- setup lsp settings
                     if server.settings then
                         config.settings = server.settings
                     end

@@ -26,6 +26,7 @@ return {
                 "toml",
                 "vim",
                 "vimdoc",
+                "xml",
                 "yaml",
             },
             sync_install = true,
