@@ -30,6 +30,7 @@ sudo systemctl enable --now bluetooth.service
 # General stuff
 paru -S --needed bat \
     btop \
+    dua-cli \
     eza \
     fastfetch \
     fd \
