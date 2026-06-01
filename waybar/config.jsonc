@@ -20,6 +20,7 @@
         "hyprland/submap",
         "tray",
         "idle_inhibitor",
+        "custom/power-profile",
         "pulseaudio",
         "pulseaudio#microphone",
         "network",
@@ -70,6 +71,18 @@
             "deactivated": ""
         },
         "tooltip": false
+    },
+    "custom/power-profile": {
+        "exec": "~/.config/waybar/scripts/power-profile.sh",
+        "return-type": "json",
+        "format": "{icon}",
+        "format-icons": {
+            "performance": "󰓅",
+            "balanced": "󰾅",
+            "low-power": "󰾆"
+        },
+        "interval": 5,
+        "tooltip": false,
     },
     "pulseaudio": {
         "format": "{icon} {volume}%",
