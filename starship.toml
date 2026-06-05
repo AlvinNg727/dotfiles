@@ -38,6 +38,9 @@ show_notifications = false
 truncation_length = 3
 read_only = " 󰌾"
 
+[direnv]
+disabled = false
+
 [docker_context]
 symbol = " "
 detect_files = ["docker-compose.yml", "docker-compose.yaml", "Dockerfile", "compose.yaml"]
@@ -68,7 +71,6 @@ symbol = "󰏗 "
 
 [python]
 symbol = " "
-pyenv_version_name = false
 python_binary = ["./venv/bin/python", "python"]
 
 [rust]
