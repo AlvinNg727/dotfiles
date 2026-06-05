@@ -1,8 +1,11 @@
+alias g="git"
 alias gcr="git clone --recurse-submodules -j8"
 alias gpr="git pull --recurse-submodules -j8"
 alias ls="eza -x --color=always --icons=always --group-directories-first --git --git-repos"
 
 alias gg="lazygit"
+
+set -g direnv_fish_mode eval_on_arrow    # trigger direnv at prompt, and on every arrow-based directory change (default)
 
 function y
     set tmp (mktemp -t "yazi-cwd.XXXXXX")
@@ -13,15 +16,17 @@ function y
     rm -f -- "$tmp"
 end
 
-if status is-interactive
-    # Commands to run in interactive sessions can go here
-end
+starship init fish | source
 
 zoxide init fish --cmd cd | source
-
-starship init fish | source
 
 uv generate-shell-completion fish | source
 uvx --generate-shell-completion fish | source
 
 thefuck --alias | source
+
+if status is-interactive
+    direnv hook fish | source
+
+    xhost +local: > /dev/null
+end
